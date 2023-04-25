@@ -17,87 +17,87 @@
 
 1 слой:
 
-  Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
+    Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
   
-  Трупный плакальщик - https://madeinabyss.fandom.com/ru/wiki/Трупный_плакальщик
+    Трупный плакальщик - https://madeinabyss.fandom.com/ru/wiki/Трупный_плакальщик
   
-  1 часть уровня 
+    1 часть уровня 
+   
+    немного артефактов
   
-  немного артефактов
-  
-  Торговец после уровня - Хаболг
+    Торговец после уровня - Хаболг
   
   
 2 слой:
 
-  Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
+    Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
   
-  Трупный плакальщик - https://madeinabyss.fandom.com/ru/wiki/Трупный_плакальщик
+    Трупный плакальщик - https://madeinabyss.fandom.com/ru/wiki/Трупный_плакальщик
   
-  Оттобас - https://madeinabyss.fandom.com/ru/wiki/Оттобас
+    Оттобас - https://madeinabyss.fandom.com/ru/wiki/Оттобас
   
-  Багрозев - https://madeinabyss.fandom.com/ru/wiki/Багровозев
+    Багрозев - https://madeinabyss.fandom.com/ru/wiki/Багровозев
   
-  2 части уровня - большие папоротники и перевернутый лес
+    2 части уровня - большие папоротники и перевернутый лес
   
-  умеренное количество артефактов
+    умеренное количество артефактов
   
-  Торговец после уровня - Озен  
+    Торговец после уровня - Озен  
   
   
 3 слой:
 
-  Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
+    Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
   
-  Пузоглот - https://madeinabyss.fandom.com/ru/wiki/Пузоглот
+    Пузоглот - https://madeinabyss.fandom.com/ru/wiki/Пузоглот
   
-  Макоджак - https://madeinabyss.fandom.com/ru/wiki/Мадокаджак
+    Макоджак - https://madeinabyss.fandom.com/ru/wiki/Мадокаджак
   
-  Багрозев - https://madeinabyss.fandom.com/ru/wiki/Багровозев
+    Багрозев - https://madeinabyss.fandom.com/ru/wiki/Багровозев
   
-  1 часть уровня - сеть пещер
+    1 часть уровня - сеть пещер
   
-  Малое количество артефактов и опасных противников, много безобидных мобов для сбора лекарств и подготовки к босс-файту
+    Малое количество артефактов и опасных противников, много безобидных мобов для сбора лекарств и подготовки к босс-файту
   
-  Торговец после уровня - группа искателей, поднимающаяся на поверхность
+    Торговец после уровня - группа искателей, поднимающаяся на поверхность
 
 4 слой:
 
-  Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
+    Молотоклюв - https://madeinabyss.fandom.com/ru/wiki/Молотоклюв
   
-  Неувядающие притворщики - https://madeinabyss.fandom.com/ru/wiki/Неувядающие_притворщики
+    Неувядающие притворщики - https://madeinabyss.fandom.com/ru/wiki/Неувядающие_притворщики
   
-  Шипоносец - https://madeinabyss.fandom.com/ru/wiki/Шипоносец
+    Шипоносец - https://madeinabyss.fandom.com/ru/wiki/Шипоносец
   
-  2 части уровня - боссфайт с шипоносцем и часть для сбора ресурсов и подготовки к следующему босс-файту
+    2 части уровня - боссфайт с шипоносцем и часть для сбора ресурсов и подготовки к следующему босс-файту
   
-  много артефактов
+    много артефактов
   
-  Торговец после уровня - магазин искателей (сюжет)
+    Торговец после уровня - магазин искателей (сюжет)
 
 5 слой:
 
-   Бондрюд
+    Бондрюд
     
-   Теневые руки
+    Теневые руки
     
-   Босс-файт с бондрюдом
+    Босс-файт с бондрюдом
 
 6 слой:
 
-  Мизоджак - https://madeinabyss.fandom.com/ru/wiki/Мизоджак\
+    Мизоджак - https://madeinabyss.fandom.com/ru/wiki/Мизоджак\
   
-  Неувядающие притворщики - https://madeinabyss.fandom.com/ru/wiki/Неувядающие_притворщики
+    Неувядающие притворщики - https://madeinabyss.fandom.com/ru/wiki/Неувядающие_притворщики
   
-  Фузошеп - https://madeinabyss.fandom.com/ru/wiki/Фузошеп
+    Фузошеп - https://madeinabyss.fandom.com/ru/wiki/Фузошеп
   
-  Витиеватый дракон - https://madeinabyss.fandom.com/ru/wiki/Витиеватый_дракон
+    Витиеватый дракон - https://madeinabyss.fandom.com/ru/wiki/Витиеватый_дракон
   
-  1 часть уровня - защита города
+    1 часть уровня - защита города
   
 
 7 слой:
 
-  Конец игры
+    Конец игры
 
 
