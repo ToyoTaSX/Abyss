@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Abyss.Entities;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -16,29 +17,50 @@ namespace Abyss
         public Vector2 EndPos { get; }
         public Player Player { get; }
         public bool IsPassed = false;
-        private List<Entity> entities;
-        private Input input;
+        public List<Entity> Entities;
 
         public Level(string name, int id, Player player)
         {
             Name = name;
             Id = id;
             Player = player;
-            StartPos = new Vector2(0f, 0f);
-            EndPos = new Vector2(300f, 0f);
-            entities = new List<Entity>
+            StartPos = new Vector2(400f, 200f);
+            EndPos = new Vector2(3000f, 0f);
+            Entities = new List<Entity>
             {
-                Player
+                Player,
+                new Block(new Vector2(600, 100)),
+                new Block(new Vector2(632, 100)),
+                new Block(new Vector2(664, 100)),
+                new Block(new Vector2(696, 100)),
+                new Block(new Vector2(728, 100))
             };
-            input = new Input(Player);
+            CreateBorders(1280, 720);
         }
 
-        public void Update()
+        private void CreateBorders(int width, int heigth)
         {
-            input.Update();
-            foreach (var entity in entities)
+            // Лево-Право
+            for (int i = 0; i <= heigth + 32; i += 32)
             {
-                entity.Update(input);
+                Entities.Add(new Block(new Vector2(0, i)));
+                Entities.Add(new Block(new Vector2(width - 32, i)));
+            }
+            // Верх-Низ
+            for (int i = -32; i <= width + 32; i += 32)
+            {
+                Entities.Add(new Block(new Vector2(i, 0)));
+                Entities.Add(new Block(new Vector2(i, heigth - 32)));
+            }
+
+        }
+
+        public void Update(GameModel game)
+        {
+            game.GameInput.Update();
+            foreach (var entity in Entities)
+            {
+                entity.Update(game);
             }
 
             if (Player.Position == EndPos)
@@ -47,7 +69,7 @@ namespace Abyss
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach(var entity in entities)
+            foreach(var entity in Entities)
             {
                 entity.Draw(spriteBatch);
             }

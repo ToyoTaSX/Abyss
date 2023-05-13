@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.DirectoryServices;
 
 namespace Abyss
 {
@@ -14,15 +15,39 @@ namespace Abyss
         {
             image = Arts.Player;
             Speed = 5;
+            IsHaveCollision = true;
         }
-        public override void Update(Input input)
+
+        public override void Update(GameModel game)
         {
-            Velocity = input.GetMovementDirection();
-            Position += Velocity * Speed;
+           Move(game);
         }
-        public override void Draw(SpriteBatch spriteBatch)
+
+        private void Move(GameModel game)
         {
-            spriteBatch.Draw(this.image, Position, null, color, Orientation, Size / 2f, 1f, 0, 0);
+            var oldPos = Position;
+            Velocity += game.GameInput.GetMovementDirection() * 0.5f * Speed;
+
+            Position.X += Velocity.X;
+            foreach (var entity in game.CurrentLevel.Entities)
+                if (entity != this && entity.IsColliding(this))
+                {
+                    Position.X = oldPos.X;
+                    break;
+                }
+
+            Position.Y += Velocity.Y;
+            foreach (var entity in game.CurrentLevel.Entities)
+                if (entity != this && entity.IsColliding(this))
+                {
+                    Position.Y = oldPos.Y;
+                    break;
+                }
+
+            //var delta = Position - oldPos;
+            //if (delta.LengthSquared() != 0)
+            //    Orientation = (float)Math.Atan2(delta.Y, delta.X);
+            Velocity *= 0.6f;
         }
     }
 }

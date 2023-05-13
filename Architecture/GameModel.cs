@@ -11,35 +11,43 @@ namespace Abyss
     {
         public List<Level> Levels = new List<Level>();
         public readonly Player Player;
-        public int CurrentLevel { get; set; }
+        public readonly Input GameInput;
+        public Level CurrentLevel 
+        {
+            get { return Levels[_currentLevel]; } 
+            set { _currentLevel = Levels.IndexOf(value); }
+        }
+        private int _currentLevel = 0;
         public GameModel()
         {
             Player = new Player();
+            GameInput = new Input(Player);
             Levels.Add(new Level("level1", 1, Player));
             Levels.Add(new Level("level2", 2, Player));
             Levels.Add(new Level("level3", 3, Player));
+            Player.Position = Levels[0].StartPos;
         }
 
         public void Update()
         {
-            if (CurrentLevel == Levels.Count)
+            if (_currentLevel == Levels.Count)
                 return;
 
-            Levels[CurrentLevel].Update();
-            if (Levels[CurrentLevel].IsPassed)
+            CurrentLevel.Update(this);
+            if (CurrentLevel.IsPassed)
             {
-                CurrentLevel += 1;
-                if (CurrentLevel < Levels.Count)
-                    Player.Position = Levels[CurrentLevel].StartPos;
+                _currentLevel += 1;
+                if (_currentLevel < Levels.Count)
+                    Player.Position =CurrentLevel.StartPos;
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (CurrentLevel == Levels.Count)
+            if (_currentLevel == Levels.Count)
                 return;
 
-            Levels[CurrentLevel].Draw(spriteBatch);
+            Levels[_currentLevel].Draw(spriteBatch);
         }
     }
 }

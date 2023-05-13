@@ -37,3 +37,4 @@ C:\Users\user\Desktop\Projects\Abyss\obj\Debug\net6.0-windows\Abyss.genruntimeco
 C:\Users\user\Desktop\Projects\Abyss\obj\Debug\net6.0-windows\ref\Abyss.dll
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\Player.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\png-transparent-sprite-animation-2d-computer-graphics-game-character-sprite-transformed.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\grass.xnb
