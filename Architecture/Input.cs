@@ -12,6 +12,8 @@ namespace Abyss
     {
         private KeyboardState keyboardState, lastKeyboardState;
         private MouseState mouseState, lastMouseState;
+        public bool IsLmbDown { get => mouseState.LeftButton == ButtonState.Pressed || lastMouseState.LeftButton == ButtonState.Pressed; }
+        public bool IsRmbDown { get => mouseState.RightButton == ButtonState.Pressed || lastMouseState.RightButton == ButtonState.Pressed; }
         public Vector2 MousePosition { get { return new Vector2(mouseState.X, mouseState.Y); } }
         public Player Player { get; }
 

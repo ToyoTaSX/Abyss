@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Abyss.Architecture;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,7 @@ namespace Abyss
         {
             Player = new Player();
             GameInput = new Input(Player);
-            Levels.Add(new Level("level1", 1, Player));
-            Levels.Add(new Level("level2", 2, Player));
-            Levels.Add(new Level("level3", 3, Player));
+            Levels.Add(new Level("level1", 1, Player, CreatedMaps.Map1));
             Player.Position = Levels[0].StartPos;
         }
 

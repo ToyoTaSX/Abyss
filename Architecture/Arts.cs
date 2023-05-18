@@ -15,11 +15,15 @@ namespace Abyss
     {
         public static Texture2D Player;
         public static Texture2D Grass;
+        public static Texture2D Bullet;
+        public static Texture2D Zombie;
 
         public static void Load(ContentManager content)
         {
-            Player = content.Load<Texture2D>("Player");
+            Player = content.Load<Texture2D>("player");
             Grass = content.Load<Texture2D>("grass");
+            Bullet = content.Load<Texture2D>("Bullet");
+            Zombie = content.Load<Texture2D>("zombie");
         }
     }
 }

@@ -35,6 +35,8 @@ C:\Users\user\Desktop\Projects\Abyss\obj\Debug\net6.0-windows\refint\Abyss.dll
 C:\Users\user\Desktop\Projects\Abyss\obj\Debug\net6.0-windows\Abyss.pdb
 C:\Users\user\Desktop\Projects\Abyss\obj\Debug\net6.0-windows\Abyss.genruntimeconfig.cache
 C:\Users\user\Desktop\Projects\Abyss\obj\Debug\net6.0-windows\ref\Abyss.dll
-C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\Player.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\png-transparent-sprite-animation-2d-computer-graphics-game-character-sprite-transformed.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\grass.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\Bullet.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\player.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\zombie.xnb
