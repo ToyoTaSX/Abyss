@@ -19,7 +19,7 @@ namespace Abyss.Weapons
         private static readonly Dictionary<string, WeaponData> WeaponsData = new Dictionary<string, WeaponData>
         {
             { "ak47", new WeaponData("ak47", 10, 15, 1, 15)},
-            { "awp", new WeaponData("awp", 50, 120, 1, 120)},
+            { "awp", new WeaponData("awp", 50, 120, 3, 120)},
             { "deagle", new WeaponData("deagle", 20, 60, 1, 60)},
             { "rickochet", new WeaponData("rickochet", 10, 10, 10, 15)},
         };

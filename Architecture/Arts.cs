@@ -18,12 +18,15 @@ namespace Abyss
         public static Texture2D Bullet;
         public static Texture2D Zombie;
 
+        public static SpriteFont Font;
+
         public static void Load(ContentManager content)
         {
             Player = content.Load<Texture2D>("player");
             Grass = content.Load<Texture2D>("grass");
             Bullet = content.Load<Texture2D>("Bullet");
             Zombie = content.Load<Texture2D>("zombie");
+            Font = content.Load<SpriteFont>("font");
         }
     }
 }

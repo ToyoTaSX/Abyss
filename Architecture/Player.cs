@@ -18,13 +18,14 @@ namespace Abyss
     {
         public Weapon weapon;
         public int Health { get; private set; }
+        public int Money;
         // Пуля, сколько кадров прошло с попадания
         private int framesFromDamage = 10;
         public Player() 
         {
             image = Arts.Player;
             Speed = 5;
-            weapon = WeaponFabrick.CreateWeapon("rickochet", this);
+            weapon = WeaponFabrick.CreateWeapon("awp", this);
             Health = 100;
         }
 
@@ -47,7 +48,6 @@ namespace Abyss
             framesFromDamage++;
             Move(game);
             Shoot(game);
-            Debug.WriteLine(weapon.Cooldown);
         }
 
         private void Shoot(GameModel game)
@@ -68,7 +68,7 @@ namespace Abyss
         private void Move(GameModel game)
         {
             var oldPos = Position;
-            Velocity += game.GameInput.GetMovementDirection() * 0.5f * Speed;
+            Velocity = game.GameInput.GetMovementDirection() * Speed;
 
             Position.X += Velocity.X;
             foreach (var obj in game.CurrentLevel.Objects)
@@ -86,13 +86,14 @@ namespace Abyss
                     break;
                 }
             var delta = Position - oldPos;
-            Orientation = (float)Math.Atan2(delta.Y, delta.X);
+            //Orientation = (float)Math.Atan2(delta.Y, delta.X);
             Velocity *= 0f;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, Position, null, Color.White, Orientation, Size / 2f, (8f / 7f), Orientation > 0 ? SpriteEffects.FlipVertically : 0, 0f);
+            spriteBatch.DrawString(Arts.Font, Map.ToMapPosition(Position).ToString(), new Vector2(100, 100), Color.Black);
+            spriteBatch.Draw(image, Position, null, Color.White, Orientation, Vector2.Zero, 1, 0, 0f);
         }
     }
 }

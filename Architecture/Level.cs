@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Abyss.Enemies;
+using System;
+using System.Diagnostics;
 
 namespace Abyss
 {
@@ -29,7 +31,7 @@ namespace Abyss
             Name = name;
             Id = id;
             Player = player;
-            StartPos = new Vector2(4 * 32f + 16, 10 * 32f + 16);
+            StartPos = new Vector2(32f * 12, 32f * 7);
             EndPos = new Vector2(3000f, 0f);
             Objects = new List<GameObject>();
             Entities = new List<Entity>
@@ -38,12 +40,25 @@ namespace Abyss
             };
             DeleteList = new List<Entity>();
             AddList = new List<Entity>();
-            LevelMap = map;      
+            LevelMap = map;
+            var emptyPos = new List<Vector2>();
             for (int x = 0; x < map.Width; x++)
                 for (int y = 0; y < map.Height; y++)
-                    CreateObjectByState(new Vector2(x * 32 + 16, y * 32 + 16), map[x, y]);
+                {
+                    if (map[x, y] == CellState.Empty)
+                        emptyPos.Add(new Vector2(x, y) * 32);
+
+                    CreateObjectByState(new Vector2(x * 32, y * 32), map[x, y]);
+                }
             CreateBorders(1280, 720);
-            Entities.Add(new Zombie());
+            var rnd = new Random();
+            player.Position = StartPos;
+            //Entities.Add(new Zombie(emptyPos[0]));
+            for (int i = 0; i < emptyPos.Count / 5; i++)
+            {
+                //Entities.Add(new Zombie(emptyPos[rnd.Next(emptyPos.Count)]));
+                Entities.Add(new Zombie(emptyPos[i]));
+            }
         }
 
         private void CreateObjectByState(Vector2 pos, CellState cellState)
@@ -61,14 +76,14 @@ namespace Abyss
             // Лево-Право
             for (int i = 0; i <= heigth + 32; i += 32)
             {
-                Objects.Add(new GrassObject(new Vector2(-16, i)));
-                Objects.Add(new GrassObject(new Vector2(width + 16, i)));
+                Objects.Add(new GrassObject(new Vector2(-32, i)));
+                Objects.Add(new GrassObject(new Vector2(width, i)));
             }
             // Верх-Низ
             for (int i = -32; i <= width + 32; i += 32)
             {
-                Objects.Add(new GrassObject(new Vector2(i, -16)));
-                Objects.Add(new GrassObject(new Vector2(i, heigth + 16)));
+                Objects.Add(new GrassObject(new Vector2(i, -32)));
+                Objects.Add(new GrassObject(new Vector2(i, heigth)));
             }
 
         }
@@ -81,7 +96,10 @@ namespace Abyss
             foreach (var entity in Entities)
             {
                 if (entity.IsExpired())
+                {
+                    entity.OnExpire(game);
                     DeleteList.Add(entity);
+                }
                 else
                     entity.Update(game);
             }
@@ -105,6 +123,7 @@ namespace Abyss
             {
                 obj.Draw(spriteBatch);
             }
+            spriteBatch.DrawString(Arts.Font, Entities.Count(e => e is Enemy).ToString(), new Vector2(100, 400), Color.Black);
         }
     }
 }

@@ -25,7 +25,10 @@ namespace Abyss.Architecture
                     for (int x = 0; x <= 40; x++)
                     {
                         var i = rnd.Next(symbols.Length);
-                        str += symbols[i];
+                        if (x > 5)
+                            str += symbols[i];
+                        else
+                            str += ' ';
                     }
                     str += '\n';
                 }

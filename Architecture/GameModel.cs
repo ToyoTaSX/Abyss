@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Abyss
@@ -23,7 +24,7 @@ namespace Abyss
         {
             Player = new Player();
             GameInput = new Input(Player);
-            Levels.Add(new Level("level1", 1, Player, CreatedMaps.Map1));
+            Levels.Add(new Level("level1", 1, Player, MapGenerator.CreateEmptyMap(40, 23)));
             Player.Position = Levels[0].StartPos;
         }
 

@@ -2,6 +2,8 @@
 using Abyss.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SharpDX.Direct3D9;
+using System;
 
 namespace Abyss
 {
@@ -19,24 +21,28 @@ namespace Abyss
             }
         }
 
+        public Vector2 CenterPosition
+        {
+            get
+            {
+                return image == null ? Vector2.Zero : Position + Size / 2f;
+            }
+        }
+
+        public Rectangle Rectangle
+        {
+            get => new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y);
+        }
+
         public bool IsColliding(Entity other)
         {
-            return !(
-                this.Position.Y > (other.Position + other.Size).Y ||
-                (this.Position + this.Size).Y < other.Position.Y ||
-                this.Position.X > (other.Position + other.Size).X ||
-                (this.Position + this.Size).X < other.Position.X
-                );
+            return Rectangle.Intersection(other.Rectangle).Area > 0;
         }
 
         public bool IsColliding(GameObject other)
         {
-            return !(
-                this.Position.Y > (other.Position + other.Size).Y ||
-                (this.Position + this.Size).Y < other.Position.Y ||
-                this.Position.X > (other.Position + other.Size).X ||
-                (this.Position + this.Size).X < other.Position.X
-                );
+            var inter = Rectangle.Intersection(other.Rectangle);
+            return inter.XIntersection > 3 || inter.YIntersection > 3;
         }
 
         public virtual bool IsExpired() => false;
@@ -49,7 +55,7 @@ namespace Abyss
         public abstract void Update(GameModel game);
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, Position, null, Color.White, Orientation, Size / 2f, 1f, 0, 0);
+            spriteBatch.Draw(image, Position, null, Color.White, Orientation, Vector2.Zero, 1f, 0, 0);
         }
     }
 }

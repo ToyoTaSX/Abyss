@@ -40,3 +40,4 @@ C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\grass.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\Bullet.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\player.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\zombie.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\font.xnb

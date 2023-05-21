@@ -50,6 +50,7 @@ namespace Abyss.Architecture
                 {
                     punchDelta--;
                     entity.OnDamage(this);
+                    break;
                 }
             PunchToExpire += Math.Sign(punchDelta);
         }

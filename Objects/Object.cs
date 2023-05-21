@@ -21,14 +21,17 @@ namespace Abyss.Objects
             get => Image == null ? Vector2.Zero : new Vector2(Image.Width, Image.Height);
         }
 
+        public Rectangle Rectangle
+        {
+            get =>  new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y);
+        }
+
         public bool IsColliding(Entity other)
         {
-            return !(
-                this.Position.Y > (other.Position + other.Size).Y ||
-                (this.Position + this.Size).Y < other.Position.Y ||
-                this.Position.X > (other.Position + other.Size).X ||
-                (this.Position + this.Size).X < other.Position.X
-                );
+            var inter = Rectangle.Intersection(other.Rectangle);
+            var x = inter.XIntersection;
+            var y = inter.YIntersection;
+            return !(x < 5 || y < 5);
         }
 
         public virtual void Update(GameModel game)
@@ -36,7 +39,7 @@ namespace Abyss.Objects
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Image, Position, null, Color.White, Orientation, Size / 2f, 1f, 0, 0.5f);
+            spriteBatch.Draw(Image, Position, null, Color.White, Orientation, Vector2.Zero, 1f, 0, 0.5f);
         }
     }
 }
