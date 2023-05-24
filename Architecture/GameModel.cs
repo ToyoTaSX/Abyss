@@ -1,4 +1,5 @@
-﻿using Abyss.Architecture;
+﻿using Abyss.Entities;
+using Abyss.Maps;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -6,10 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Abyss;
+using Abyss.Maps;
+using Abyss.ContentClasses;
+using Abyss.Enemies;
+using Abyss.Entities;
+using Abyss.Objects;
+using Abyss.Weapons;
+using Abyss.Architecture;
 
-namespace Abyss
+namespace Abyss.Architecture
 {
-    internal class GameModel
+    public class GameModel
     {
         public List<Level> Levels = new List<Level>();
         public readonly Player Player;
@@ -20,11 +29,12 @@ namespace Abyss
             set { _currentLevel = Levels.IndexOf(value); }
         }
         private int _currentLevel = 0;
-        public GameModel()
+        public GameModel(Camera camera)
         {
             Player = new Player();
-            GameInput = new Input(Player);
-            Levels.Add(new Level("level1", 1, Player, MapGenerator.CreateEmptyMap(40, 23)));
+            GameInput = new Input(Player, camera);
+            var mazeGenerator = new MazeGenerator();
+            Levels.Add(new Level(Player, MapGenerator.CreateEmptyMap(50, 50)));
             Player.Position = Levels[0].StartPos;
         }
 

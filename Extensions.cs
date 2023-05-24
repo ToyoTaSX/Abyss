@@ -12,7 +12,7 @@ namespace Abyss
         public static (int XIntersection, int YIntersection, int Area) Intersection(this Rectangle r1, Rectangle r2)
         {
             var xOverlap = Math.Max(0, Math.Min(r1.X + r1.Width, r2.X + r2.Width) - Math.Max(r1.X, r2.X));
-            var yOverlap = Math.Max(0, Math.Min(r1.Y + r2.Height, r2.Y + r2.Height) - Math.Max(r1.Y, r2.Y));
+            var yOverlap = Math.Max(0, Math.Min(r1.Y + r1.Height, r2.Y + r2.Height) - Math.Max(r1.Y, r2.Y));
             return (xOverlap, yOverlap, xOverlap * yOverlap);
         }
 
@@ -38,7 +38,18 @@ namespace Abyss
             return delta.X * delta.X + delta.Y * delta.Y;
         }
 
-
+        public static IEnumerable<Vector2> GetPointsBetween(this Vector2 startPos, Vector2 endPos)
+        {
+            var dir = endPos - startPos;
+            dir.Normalize();
+            while (startPos.DistanceSquared(endPos) > dir.LengthSquared())
+            {
+                if ((endPos - startPos).LengthSquared() < dir.LengthSquared())
+                    yield break;
+                startPos += dir;
+                yield return startPos;
+            }
+        }
 
         public static bool AlmostEqual(this Vector2 v1,  Vector2 v2)
         {

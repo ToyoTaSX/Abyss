@@ -1,13 +1,19 @@
-﻿using Abyss.Architecture;
+﻿using Abyss.ContentClasses;
 using Abyss.Objects;
+using Abyss.Weapons;
+using Abyss;
+using Abyss.Maps;
+using Abyss.Enemies;
+using Abyss.Entities;
+using Abyss.Architecture;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SharpDX.Direct3D9;
 using System;
 
-namespace Abyss
+namespace Abyss.Architecture
 {
-    abstract class Entity
+    public abstract class Entity
     {
         protected Texture2D image = Arts.Player;
         public Vector2 Position, Velocity;
@@ -55,7 +61,7 @@ namespace Abyss
         public abstract void Update(GameModel game);
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, Position, null, Color.White, Orientation, Vector2.Zero, 1f, 0, 0);
+            spriteBatch.Draw(image, Position + Size / 2, null, Color.White, Orientation, Size / 2, 1, 0, 0f);
         }
     }
 }

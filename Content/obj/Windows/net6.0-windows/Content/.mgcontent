@@ -4,13 +4,47 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Background.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/BAR.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/Bullet.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Colt.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/DP28.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/font.spritefont</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Gewehr43.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/grass.jpg</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Health.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Heart.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Kar98K.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/LMG99.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Money.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Mosin.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MP40.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/player.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/PPSH.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Revolver.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Stg44.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Thompson.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Trophy.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/zombie.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

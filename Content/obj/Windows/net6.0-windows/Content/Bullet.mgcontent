@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/user/Desktop/Projects/Abyss/Content/Bullet.png</SourceFile>
-  <SourceTime>2023-05-15T09:48:16.7882029+05:00</SourceTime>
+  <SourceTime>2023-05-24T20:46:16.0314094+05:00</SourceTime>
   <DestFile>C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/Content/Bullet.xnb</DestFile>
-  <DestTime>2023-05-15T09:51:00.0395692+05:00</DestTime>
+  <DestTime>2023-05-24T20:47:04.7997705+05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T16:44:56+05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

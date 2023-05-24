@@ -5,10 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Abyss.Entities;
+using Abyss;
+using Abyss.Maps;
+using Abyss.ContentClasses;
+using Abyss.Enemies;
+using Abyss.Entities;
+using Abyss.Objects;
+using Abyss.Weapons;
+using Abyss.Architecture;
 
-namespace Abyss
+namespace Abyss.Architecture
 {
-    class Input
+    public class Input
     {
         private KeyboardState keyboardState, lastKeyboardState;
         private MouseState mouseState, lastMouseState;
@@ -16,10 +25,12 @@ namespace Abyss
         public bool IsRmbDown { get => mouseState.RightButton == ButtonState.Pressed || lastMouseState.RightButton == ButtonState.Pressed; }
         public Vector2 MousePosition { get { return new Vector2(mouseState.X, mouseState.Y); } }
         public Player Player { get; }
+        public Camera Camera { get; }
 
-        public Input(Player player)
+        public Input(Player player, Camera camera)
         { 
             Player = player; 
+            Camera = camera;
         }
 
         public void Update()
@@ -55,11 +66,11 @@ namespace Abyss
 
         public Vector2 GetAimDirection()
         {
-            Vector2 direction = MousePosition - this.Player.Position;
-            if (direction == Vector2.Zero)
-                return Vector2.Zero;
-            else
-                return Vector2.Normalize(direction);
+            var cameraToMouse = MousePosition - Camera.MainWindowCenter;
+            var playerToCamera = Camera.CenterPosition - Player.CenterPosition;
+            var res = playerToCamera * Camera.Scale + cameraToMouse;
+            res.Normalize();
+            return res;
         }
     }
 }

@@ -1,3 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/user/Desktop/Projects/Abyss/Content/player.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/player.xnb","TextureProcessor","Texture2DContent",186,4181,0,1744755
-"C:/Users/user/Desktop/Projects/Abyss/Content/zombie.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/zombie.xnb","TextureProcessor","Texture2DContent",190,4181,0,0024969
+"C:/Users/user/Desktop/Projects/Abyss/Content/Background.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/Background.xnb","TextureProcessor","Texture2DContent",50025,388885,0,1253721
