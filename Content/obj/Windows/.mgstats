@@ -1,2 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/user/Desktop/Projects/Abyss/Content/Background.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/Background.xnb","TextureProcessor","Texture2DContent",50025,388885,0,1253721
+"C:/Users/user/Desktop/Projects/Abyss/Content/ButtonOnActive.mp3","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/ButtonOnActive.xnb","SoundEffectProcessor","SoundEffectContent",16293,235113,0,4615317
+"C:/Users/user/Desktop/Projects/Abyss/Content/ButtonOnClick.mp3","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/ButtonOnClick.xnb","SoundEffectProcessor","SoundEffectContent",11714,235113,0,276176

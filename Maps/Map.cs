@@ -24,11 +24,12 @@ namespace Abyss.Maps
     {
         private readonly CellState[,] mapCells;
         public Dictionary<Point, Dictionary<Point, Point>> pointToPoint;
+        public readonly List<Point> PossibleTargets;
         public readonly int Width;
         public readonly int Height;
 
-        public HashSet<CellState> EmtyStates = new HashSet<CellState>()
-        { CellState.Empty, };
+        public static HashSet<CellState> EmtyStates = new HashSet<CellState>()
+        { CellState.Empty, CellState.Gravel, CellState.Grass, CellState.Dirt};
 
         public CellState this[int x, int y]
         {
@@ -45,8 +46,8 @@ namespace Abyss.Maps
             this.mapCells = mapCells;
             Width = mapCells.GetLength(0);
             Height = mapCells.GetLength(1);
-            mapCells[2, 2] = CellState.Empty;
             GeneratePathTable();
+            PossibleTargets = GetPossibleTargets2x2().ToList();
         }
 
         public Vector2 GetNextPosition(Vector2 startPos, Vector2 endPos)
@@ -59,6 +60,30 @@ namespace Abyss.Maps
                     direction = result;
             var nextPos = point1 + direction;
             return ToAbsPosition(nextPos);
+        }
+
+        private IEnumerable<Point> GetPossibleTargets2x2()
+        {
+            var busyPoints = new HashSet<Point>();
+            for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Height; y++)
+                {
+                    var tl = new Point(x, y);
+                    var tr = new Point(x + 1, y);
+                    var bl = new Point(x, y + 1);
+                    var br = new Point(x + 1, y + 1);
+                    var points = new[] {tl, tr, bl, br };
+                    if (points.Any(p => 
+                                busyPoints.Contains(p) ||
+                                !InBounds(p) ||
+                                this[p.X, p.Y] != CellState.Box))
+                        continue;
+                    busyPoints.Add(tl);
+                    busyPoints.Add(tr);
+                    busyPoints.Add(bl);
+                    busyPoints.Add(br);
+                    yield return tl + new Point(-1, -1);
+                }
         }
 
         #region Path Table Generation
@@ -191,6 +216,12 @@ namespace Abyss.Maps
     public enum CellState
     {
         Empty,
-        Grass
+        Grass,
+        Water,
+        Sandstone,
+        Box,
+        Gravel,
+        Dirt,
+        Bricks
     }
 }

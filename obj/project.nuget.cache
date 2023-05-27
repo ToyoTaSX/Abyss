@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "f/f76fvUM/WAxqMfBUVB8wthmTaC664N456kpcnbS0Qn11nu6MMPtgksC9i8qjj7LTG/hWZKVGUV77pEqaZarQ==",
+  "dgSpecHash": "2H2fVpcsL49y5lhKZh7+1TNw5vfhNnfmgIRhGwvA2ydCXRQGUHDfOqisWDzZ8Al980NxVmDqkGK5K1J0Cgeg9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Desktop\\Projects\\Abyss\\Abyss.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "C:\\Users\\user\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\monogame.framework.windowsdx\\3.8.1.303\\monogame.framework.windowsdx.3.8.1.303.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\runtime.native.system.io.compression\\4.1.0\\runtime.native.system.io.compression.4.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\runtime.native.system.net.http\\4.0.1\\runtime.native.system.net.http.4.0.1.nupkg.sha512",

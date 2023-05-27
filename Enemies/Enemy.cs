@@ -33,7 +33,7 @@ namespace Abyss.Enemies
         }
         public override void OnDamage(Bullet bullet)
         {
-            if (framesFromDamage < 10)
+            if (framesFromDamage < 2)
                 return;
             Health -= bullet.Damage;
             framesFromDamage = 0;
@@ -81,7 +81,7 @@ namespace Abyss.Enemies
         {
             if (Weapon.Cooldown > 0)
                 return;
-            var aimDir = game.Player.CenterPosition - CenterPosition;
+            var aimDir = (game.Player.CenterPosition + game.Player.Velocity * game.Player.Speed) - CenterPosition;
             aimDir.Normalize();
             game.CurrentLevel.BullAddList.Add(Weapon.CreateBullet(CenterPosition, aimDir));
         }
@@ -94,7 +94,7 @@ namespace Abyss.Enemies
             foreach (var vector in CenterPosition.GetPointsBetween(game.Player.CenterPosition))
             {
                 var point = Map.ToMapPosition(vector);
-                if (map[point.X, point.Y] != CellState.Empty)
+                if (!Map.EmtyStates.Contains(map[point.X, point.Y]))
                     return false;
             }
             return true;

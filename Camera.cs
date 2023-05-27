@@ -38,7 +38,7 @@ namespace Abyss
         public void Follow(Entity target, Map map)
         {
             var dx = MathHelper.Clamp(target.CenterPosition.X, VisionWindowSize.X / 2 - 30, (map.Width + 1) * 32 - VisionWindowSize.X / 2 - 2);
-            var dy = MathHelper.Clamp(target.CenterPosition.Y, VisionWindowSize.Y / 2 - 30, (map.Height + 1) * 32 - VisionWindowSize.Y / 2 - 2);
+            var dy = MathHelper.Clamp(target.CenterPosition.Y, VisionWindowSize.Y / 2 - 30, (map.Height + 2) * 32 - VisionWindowSize.Y / 2 - 2);
             WindowPos = new(dx - VisionWindowSize.X / 2, dy - VisionWindowSize.Y / 2);
 
             var position = Matrix.CreateTranslation(

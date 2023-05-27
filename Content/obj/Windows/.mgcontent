@@ -4,30 +4,80 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Background.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/BAR.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/Bullet.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Colt.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/DP28.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/ButtonOnActive.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/ButtonOnClick.mp3</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/font.spritefont</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Gewehr43.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/grass.jpg</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Health.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Heart.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Kar98K.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/LMG99.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Money.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Mosin.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MP40.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/Background.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/ButtonBackgroundActive.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/ButtonBackgroundClick.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/ButtonBackgroundDisabled.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/ButtonBackgroundInactive.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/Health.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/Heart.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/LoadBackground.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/MainBackground.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/Money.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/SaveBacground.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/Trophy.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/WeaponBuyActive.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/WeaponBuyInactive.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/IngameFont.spritefont</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MainMenu.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MainTheme.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/GrassMap.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Box.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Bricks.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Dirt.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Grass.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Gravel.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Sandstone.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/StartPosition.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/TargetBackgroundGreen.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/TargetBackgroundRed.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Water.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/player.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/PPSH.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Revolver.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Stg44.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Thompson.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Trophy.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/TradeMenu.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/BAR.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Colt.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/DP28.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Gewehr43.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Kar98K.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/LMG99.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Mosin.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/MP40.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/PPSH.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Revolver.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Stg44.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Thompson.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/zombie.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

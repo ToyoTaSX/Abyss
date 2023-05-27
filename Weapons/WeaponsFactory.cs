@@ -20,18 +20,38 @@ namespace Abyss.Weapons
         private static readonly Dictionary<WeaponName, WeaponData> WeaponsData = new Dictionary<WeaponName, WeaponData>
         {
             //Name : Name, speed, damage, punches, cooldown, image
+
+            // Рейтинг
+            // 5
             { WeaponName.DP28, new WeaponData(WeaponName.DP28, 5, 5, 1, 5, WeaponImages.DP28)},
+
+            //7
             { WeaponName.Colt, new WeaponData(WeaponName.Colt, 10, 10, 1, 15, WeaponImages.Colt)},
+
+            //2
             { WeaponName.BAR, new WeaponData(WeaponName.BAR, 10, 10, 2, 5, WeaponImages.BAR)},
             { WeaponName.Gewehr43, new WeaponData(WeaponName.Gewehr43, 20, 35, 3, 25, WeaponImages.Gewehr43)},
+
+            //3
             { WeaponName.Kar98K, new WeaponData(WeaponName.Kar98K, 30, 95, 4, 50, WeaponImages.Kar98K)},
             { WeaponName.Mosin, new WeaponData(WeaponName.Mosin, 30, 95, 4, 50, WeaponImages.Mosin)},
+
+            // 4
             { WeaponName.MP40, new WeaponData(WeaponName.MP40, 10, 5, 1, 5, WeaponImages.MP40)},
             { WeaponName.PPSH, new WeaponData(WeaponName.PPSH, 10, 15, 1, 15, WeaponImages.PPSH)},
+
+            // 5
             { WeaponName.Revolver, new WeaponData(WeaponName.Revolver, 30, 35, 1, 60, WeaponImages.Revolver)},
+
+            // 6
             { WeaponName.Stg44, new WeaponData(WeaponName.Stg44, 10, 5, 1, 7, WeaponImages.Stg44)},
             { WeaponName.Thompson, new WeaponData(WeaponName.Thompson, 10, 15, 1, 20, WeaponImages.Thompson)},
+
+            //1
             { WeaponName.LMG99, new WeaponData(WeaponName.LMG99, 20, 15, 1, 2, WeaponImages.LMG99)},
+
+            //0
+            { WeaponName.Cheat, new WeaponData(WeaponName.Cheat, 20, 150, 1, 2, WeaponImages.LMG99)},
         };
         
 
@@ -77,5 +97,7 @@ namespace Abyss.Weapons
         Stg44,
         Thompson,
         LMG99,
+
+        Cheat
     }
 }

@@ -26,6 +26,7 @@ namespace Abyss.Objects
         public CellState CellState;
         public Vector2 Position;
         public Point MapPosition;
+        public bool IsHaveCollision;
 
         public GameObject(Texture2D image, CellState cellState, Vector2 position) 
         {
@@ -33,6 +34,7 @@ namespace Abyss.Objects
             CellState = cellState;
             Position = position;
             MapPosition = Map.ToMapPosition(position);
+            IsHaveCollision = !Map.EmtyStates.Contains(cellState);
         }
 
         public Vector2 Size
@@ -47,6 +49,9 @@ namespace Abyss.Objects
 
         public bool IsColliding(Entity other)
         {
+            if (!IsHaveCollision)
+                return false;
+
             var inter = Rectangle.Intersection(other.Rectangle);
             var x = inter.XIntersection;
             var y = inter.YIntersection;

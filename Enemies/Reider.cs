@@ -23,14 +23,14 @@ namespace Abyss.Enemies
 {
     public class Reider : Enemy
     {
-        public Reider(Vector2 position)
+        public Reider(Vector2 position, WeaponName weapon)
         {
             image = Arts.Reider;
             Health = 100;
             Position = position;
             Speed = 2;
             target = position;
-            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Thompson, new List<Type>() { typeof(Player), typeof(Bullet) });
+            Weapon = WeaponsFactory.CreateWeapon(weapon, new List<Type>() { typeof(Player), typeof(Bullet) });
         }
 
         public override void OnExpire(GameModel game)
@@ -41,6 +41,11 @@ namespace Abyss.Enemies
 
         public override void Update(GameModel game)
         {
+            if ((game.Player.Position - Position).LengthSquared() > 32 * 32 * 20 * 20)
+            {
+                IsActive = false;
+                return;
+            }
             var oldPos = Position;
             var canShoot = IsCanShootToPlayer(game);
             if (canShoot || IsActive)

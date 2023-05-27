@@ -24,7 +24,7 @@ namespace Abyss.Architecture
         public bool IsLmbDown { get => mouseState.LeftButton == ButtonState.Pressed || lastMouseState.LeftButton == ButtonState.Pressed; }
         public bool IsRmbDown { get => mouseState.RightButton == ButtonState.Pressed || lastMouseState.RightButton == ButtonState.Pressed; }
         public Vector2 MousePosition { get { return new Vector2(mouseState.X, mouseState.Y); } }
-        public Player Player { get; }
+        public Player Player { get; set; }
         public Camera Camera { get; }
 
         public Input(Player player, Camera camera)
@@ -44,6 +44,16 @@ namespace Abyss.Architecture
         public bool WasKeyPressed(Keys key)
         {
             return lastKeyboardState.IsKeyUp(key) && keyboardState.IsKeyDown(key);
+        }
+
+        public bool WasLMBPressed()
+        {
+            return lastMouseState.LeftButton == ButtonState.Released && IsLmbDown;
+        }
+
+        public bool WasRMBPressed()
+        {
+            return lastMouseState.RightButton == ButtonState.Released && IsRmbDown;
         }
 
         public Vector2 GetMovementDirection()

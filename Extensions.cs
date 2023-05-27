@@ -1,9 +1,13 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Abyss.ContentClasses;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using SharpDX.Direct2D1.Effects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Abyss
 {
@@ -55,6 +59,26 @@ namespace Abyss
         {
             var delta = v2 - v1;
             return delta.LengthSquared() < 1; ;
+        }
+
+        public static int DistanceTo(this Color color1, Color color2)
+        {
+            return Math.Abs(color1.R - color2.R) + Math.Abs(color1.G - color2.G) + Math.Abs(color1.B - color2.B);
+        }
+
+        public static void DrawStrCentered(this SpriteBatch spriteBatch, Rectangle rect, string text,  Vector2 offset, Color? color = null, int scale = 1)
+        {
+            var v = Arts.Font.MeasureString(text) * scale;
+            var pos = rect.Center.ToVector2() - v / 2 + offset;
+            var clr = color == null? Color.Black : (Color)color;
+            spriteBatch.DrawString(Arts.Font, text, pos, clr, 0, Vector2.Zero, scale, 0, 0);
+        }
+
+        public static void DrawRectangle(this SpriteBatch spriteBatch, Rectangle rect, Color color)
+        {
+            var pixel = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
+            pixel.SetData(new[] { color });
+            spriteBatch.Draw(pixel, rect, color);
         }
     }
 }

@@ -15,49 +15,80 @@ using Abyss.Entities;
 using Abyss.Objects;
 using Abyss.Weapons;
 using Abyss.Architecture;
+using SharpDX.MediaFoundation;
+using Microsoft.Xna.Framework;
 
 namespace Abyss.Architecture
 {
     public class GameModel
     {
-        public List<Level> Levels = new List<Level>();
+        public List<Func<Player, int?, int?, int?, Level>> Levels = new List<Func<Player, int?, int?, int?, Level>>();
         public readonly Player Player;
         public readonly Input GameInput;
-        public Level CurrentLevel 
-        {
-            get { return Levels[_currentLevel]; } 
-            set { _currentLevel = Levels.IndexOf(value); }
-        }
-        private int _currentLevel = 0;
-        public GameModel(Camera camera)
+        public Level CurrentLevel = null;
+        public int CurrentLevelIndex = 0;
+        public Task<Level> LevelLoadTask;
+        public GameState State;
+        public int FramesToStart;
+        public GameModel(Camera camera, Input input)
         {
             Player = new Player();
-            GameInput = new Input(Player, camera);
-            var mazeGenerator = new MazeGenerator();
-            Levels.Add(new Level(Player, MapGenerator.CreateEmptyMap(50, 50)));
-            Player.Position = Levels[0].StartPos;
+            input.Player = Player;
+            GameInput = input;
+            Levels.Add(CreatedLevels.GetLevel1);
+            //Levels.Add(CreatedLevels.GetLevel2);
+            //Levels.Add(CreatedLevels.GetLevel3);
+            //Levels.Add(CreatedLevels.GetLevel4);
+            //Levels.Add(CreatedLevels.GetLevel5);
         }
 
         public void Update()
         {
-            if (_currentLevel == Levels.Count)
+            if (State == GameState.Ended)
                 return;
+            if (LevelLoadTask != null && !LevelLoadTask.IsCompleted)
+                return;
+            if (LevelLoadTask != null && LevelLoadTask.IsCompleted && State == GameState.Loading)
+            {
+                CurrentLevel = LevelLoadTask.Result;
+                FramesToStart = 60;
+                State = GameState.Running;
+                return;
+            }
+
+            if (CurrentLevel == null || CurrentLevel.IsPassed)
+            {
+                LevelLoadTask = Task.Run(() => Levels[CurrentLevelIndex](Player, null, null, null));
+                State = GameState.Loading;
+                return;
+            }
+
+            if (FramesToStart > 0)
+            {
+                FramesToStart--;
+                return;
+            }
 
             CurrentLevel.Update(this);
             if (CurrentLevel.IsPassed)
             {
-                _currentLevel += 1;
-                if (_currentLevel < Levels.Count)
-                    Player.Position =CurrentLevel.StartPos;
+                CurrentLevelIndex++;
+                if (CurrentLevelIndex >= Levels.Count)
+                {
+                    State = GameState.Ended;
+                    return;
+                }
+                State = GameState.Trading;
+                return;
             }
+            if (Player.IsExpired())
+                State = GameState.Dead;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (_currentLevel == Levels.Count)
-                return;
-
-            Levels[_currentLevel].Draw(spriteBatch);
+            CurrentLevel.Draw(spriteBatch);
         }
     }
 }

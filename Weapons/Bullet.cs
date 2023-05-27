@@ -66,7 +66,7 @@ namespace Abyss.Weapons
             var oldPos = Position;
             Position.X += Velocity.X * Speed;
             var startPos = Map.ToMapPosition(StartVect);
-            if (!map.InBounds(startPos) || !map.EmtyStates.Contains(map[startPos.X, startPos.Y]))
+            if (!map.InBounds(startPos) || !Map.EmtyStates.Contains(map[startPos.X, startPos.Y]))
             {
                 Position.X = oldPos.X;
                 Velocity.X *= -1;
@@ -75,7 +75,7 @@ namespace Abyss.Weapons
 
             Position.Y += Velocity.Y * Speed;
             startPos = Map.ToMapPosition(StartVect);
-            if (!map.InBounds(startPos) || !map.EmtyStates.Contains(map[startPos.X, startPos.Y]))
+            if (!map.InBounds(startPos) || !Map.EmtyStates.Contains(map[startPos.X, startPos.Y]))
             {
                 Position.Y = oldPos.Y;
                 Velocity.Y *= -1;

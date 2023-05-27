@@ -25,21 +25,24 @@ namespace Abyss.Entities
 {
     public class Player : Entity
     {
-        public Weapon weapon;
-        public int Health { get; private set; }
+        public Weapon Weapon;
+        public int Health { get; set; }
         public int Money;
-        private int framesFromDamage = 10;
+        public int MedecineCount;
+        private int framesFromDamage = 5;
+        public int FramesFromMedicine = 10;
         public Player()
         {
             image = Arts.Player;
             Speed = 5;
-            weapon = WeaponsFactory.CreateWeapon(WeaponName.Mosin, new List<Type>() { typeof(Enemy), typeof(Bullet) });
+            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Colt, new List<Type>() { typeof(Enemy), typeof(Bullet) });
             Health = 999;
+            MedecineCount = 2;
         }
 
         public override void OnDamage(Bullet bullet)
         {
-            if (framesFromDamage < 10)
+            if (framesFromDamage < 5)
                 return;
             Health -= bullet.Damage;
             framesFromDamage = 0;
@@ -54,23 +57,43 @@ namespace Abyss.Entities
         public override void Update(GameModel game)
         {
             framesFromDamage++;
+            FramesFromMedicine++;
+            Medicine(game);
             Move(game);
             Shoot(game);
+            
+        }
+
+        private void Medicine(GameModel game)
+        {
+            if (FramesFromMedicine < 100)
+                return;
+            if (MedecineCount <= 0)
+                return;
+            if (!game.GameInput.WasKeyPressed(Keys.E))
+                return;
+
+            Health += 60;
+            FramesFromMedicine = 0;
+            MedecineCount--;
         }
 
         private void Shoot(GameModel game)
         {
-            if (weapon == null)
+            if (Weapon == null)
                 return;
-            if (weapon.Cooldown > 0)
-                weapon.Cooldown -= 1;
+            var aimDir = game.GameInput.GetAimDirection();
+            if (aimDir != Vector2.Zero && game.GameInput.IsLmbDown)
+                Orientation = (float)Math.Atan2(aimDir.Y, aimDir.X);
+
+            if (Weapon.Cooldown > 0)
+                Weapon.Cooldown -= 1;
             else
             {
-                var aimDir = game.GameInput.GetAimDirection();
                 if (aimDir == Vector2.Zero || !game.GameInput.IsLmbDown)
                     return;
 
-                game.CurrentLevel.BullAddList.Add(weapon.CreateBullet(CenterPosition, aimDir));
+                game.CurrentLevel.BullAddList.Add(Weapon.CreateBullet(CenterPosition, aimDir));
             }
         }
         private void Move(GameModel game)
@@ -94,7 +117,6 @@ namespace Abyss.Entities
                 }
             var delta = Position - oldPos;
             Orientation = delta != Vector2.Zero ? (float)Math.Atan2(delta.Y, delta.X) : Orientation;
-            Velocity *= 0f;
         }
     }
 }

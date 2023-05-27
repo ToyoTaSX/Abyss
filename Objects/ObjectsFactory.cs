@@ -24,6 +24,13 @@ namespace Abyss.Objects
         private static Dictionary<CellState, Texture2D> objectsImages = new Dictionary<CellState, Texture2D>()
         {
             {CellState.Grass, Arts.Grass },
+            {CellState.Bricks, Arts.Bricks },
+            {CellState.Water, Arts.Water },
+            {CellState.Gravel, Arts.Gravel },
+            {CellState.Dirt, Arts.Dirt },
+            {CellState.Box, Arts.Box },
+            {CellState.Sandstone, Arts.Sandstone },
+            {CellState.Empty, Arts.Grass },
 
         };
 
