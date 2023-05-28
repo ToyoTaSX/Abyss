@@ -31,12 +31,14 @@ namespace Abyss.Enemies
         {
             return Health <= 0;
         }
+
         public override void OnDamage(Bullet bullet)
         {
             if (framesFromDamage < 2)
                 return;
             Health -= bullet.Damage;
             framesFromDamage = 0;
+            SoundEffects.EnemyDamage.Play();
         }
 
         public override void Update(GameModel game)

@@ -36,10 +36,10 @@ namespace Abyss.Architecture
             input.Player = Player;
             GameInput = input;
             Levels.Add(CreatedLevels.GetLevel1);
-            //Levels.Add(CreatedLevels.GetLevel2);
-            //Levels.Add(CreatedLevels.GetLevel3);
-            //Levels.Add(CreatedLevels.GetLevel4);
-            //Levels.Add(CreatedLevels.GetLevel5);
+            Levels.Add(CreatedLevels.GetLevel2);
+            Levels.Add(CreatedLevels.GetLevel3);
+            Levels.Add(CreatedLevels.GetLevel4);
+            Levels.Add(CreatedLevels.GetLevel5);
         }
 
         public void Update()

@@ -14,6 +14,7 @@ using Abyss.Objects;
 using Abyss.Weapons;
 using Abyss.Architecture;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Abyss.Weapons
 {
@@ -22,6 +23,7 @@ namespace Abyss.Weapons
         public readonly List<Type> WhoCenBeDamaged;
         private Random _random = new Random();
         public readonly Texture2D Image;
+        private SoundEffect sound;
 
         public WeaponName Name { get; private set; }
         public int PunchToExpire { get; set; }
@@ -36,7 +38,7 @@ namespace Abyss.Weapons
             set => _cooldown = value <= 0 ? 0 : value % FramesCooldown;
         }
 
-        public Weapon(WeaponName name, List<Type> damageList, int punchToExpire, int damage, int speed, int coolDown, Texture2D image)
+        public Weapon(WeaponName name, List<Type> damageList, int punchToExpire, int damage, int speed, int coolDown, Texture2D image, SoundEffect sound)
         {
             Name = name;
             WhoCenBeDamaged = damageList;
@@ -45,6 +47,7 @@ namespace Abyss.Weapons
             BulletSpeed = speed;
             FramesCooldown = coolDown;
             Image = image;
+            this.sound = sound; 
         }
 
         public virtual Bullet CreateBullet(Vector2 startPos, Vector2 direction)
@@ -55,6 +58,7 @@ namespace Abyss.Weapons
             var bullet = new Bullet(direction, BulletSpeed, PunchToExpire, startPos, Damage, WhoCenBeDamaged);
             bullet.Position -= bullet.Size / 2f;
             Cooldown = FramesCooldown - 1;
+            sound.Play();
             return bullet;
         }
     }

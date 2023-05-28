@@ -64,7 +64,7 @@ namespace Abyss.Hud
             // Аптечки
             var healthPos = coinPos + paramDelta;
             spriteBatch.Draw(Arts.Health, healthPos, null, Color.White, 0, Vector2.Zero, 2f, 0, 0);
-            var str = framesMedicine == 100 ? "ready" : framesMedicine.ToString();
+            var str = framesMedicine == 100 ? "готов" : framesMedicine.ToString();
             if (medecine > 0)
                 str = '(' + str + ")";
             else
@@ -83,7 +83,7 @@ namespace Abyss.Hud
             var imagePos = new Vector2(Width / 2 - Weapon.Image.Width * scale / 2, Heigth - 80);
             spriteBatch.Draw(Weapon.Image, imagePos, null, Color.White, 0, Vector2.Zero, scale, 0, 0);
             var textPos = new Vector2(imagePos.X + Weapon.Image.Width * scale + 100, (healthPos + textDelta).Y);
-            spriteBatch.DrawString(Arts.Font, $"{Weapon.Name}   [ DMG:{Weapon.Damage}    SPD:{Weapon.BulletSpeed} ]", textPos, Color.Gray);
+            spriteBatch.DrawString(Arts.Font, $"{Weapon.Name}   [ УР:{Weapon.Damage}    СКОР:{Weapon.BulletSpeed} ]", textPos, Color.Gray);
 
             //Обратный отсчет
             if (framesToStart > 0)

@@ -35,7 +35,7 @@ namespace Abyss.Entities
         {
             image = Arts.Player;
             Speed = 5;
-            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Colt, new List<Type>() { typeof(Enemy), typeof(Bullet) });
+            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Cheat, new List<Type>() { typeof(Enemy), typeof(Bullet) });
             Health = 999;
             MedecineCount = 2;
         }
@@ -46,7 +46,7 @@ namespace Abyss.Entities
                 return;
             Health -= bullet.Damage;
             framesFromDamage = 0;
-
+            SoundEffects.PlayerDamage.Play();
         }
 
         public override bool IsExpired()
@@ -73,7 +73,7 @@ namespace Abyss.Entities
             if (!game.GameInput.WasKeyPressed(Keys.E))
                 return;
 
-            Health += 60;
+            Health += 100;
             FramesFromMedicine = 0;
             MedecineCount--;
         }

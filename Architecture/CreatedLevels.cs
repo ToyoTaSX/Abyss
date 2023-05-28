@@ -13,7 +13,7 @@ namespace Abyss.Architecture
         public static Level GetLevel1(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
             new Level(
                     player,
-                    CreatedMaps.GrassMap,
+                    CreatedMaps.Map1,
                     targetsCount == null ? 4 : (int)targetsCount,
                     enemiesCount == null ? 5 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
@@ -21,7 +21,7 @@ namespace Abyss.Architecture
         public static Level GetLevel2(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
             new Level(
                     player,
-                    CreatedMaps.EmptyMap,
+                    CreatedMaps.Map2,
                     targetsCount == null ? 4 : (int)targetsCount,
                     enemiesCount == null ? 1 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
@@ -29,7 +29,7 @@ namespace Abyss.Architecture
         public static Level GetLevel3(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
             new Level(
                     player,
-                    CreatedMaps.GrassMap,
+                    CreatedMaps.Map3,
                     targetsCount == null ? 4 : (int)targetsCount,
                     enemiesCount == null ? 5 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
@@ -37,7 +37,7 @@ namespace Abyss.Architecture
         public static Level GetLevel4(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
             new Level(
                     player,
-                    CreatedMaps.GrassMap,
+                    CreatedMaps.Map4,
                     targetsCount == null ? 4 : (int)targetsCount,
                     enemiesCount == null ? 5 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
@@ -45,7 +45,7 @@ namespace Abyss.Architecture
         public static Level GetLevel5(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
             new Level(
                     player,
-                    CreatedMaps.GrassMap,
+                    CreatedMaps.Map5,
                     targetsCount == null ? 4 : (int)targetsCount,
                     enemiesCount == null ? 5 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);

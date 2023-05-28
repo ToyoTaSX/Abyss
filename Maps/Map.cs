@@ -29,7 +29,15 @@ namespace Abyss.Maps
         public readonly int Height;
 
         public static HashSet<CellState> EmtyStates = new HashSet<CellState>()
-        { CellState.Empty, CellState.Gravel, CellState.Grass, CellState.Dirt};
+        {
+            CellState.Empty,
+            CellState.Dirt,
+            CellState.Grass,
+            CellState.Sand,
+            CellState.Stone,
+            CellState.Tiles,
+            CellState.WoodPlanks,
+        };
 
         public CellState this[int x, int y]
         {
@@ -215,13 +223,16 @@ namespace Abyss.Maps
 
     public enum CellState
     {
-        Empty,
-        Grass,
-        Water,
-        Sandstone,
         Box,
-        Gravel,
+        Empty,
+        Bricks,
+        Cement,
         Dirt,
-        Bricks
+        Grass,
+        Sand,
+        Stone,
+        Tiles,
+        WoodPlanks,
+        Water
     }
 }

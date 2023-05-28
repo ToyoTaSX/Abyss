@@ -41,6 +41,7 @@ namespace Abyss.Gui
                 p.Health = newP.Health;
                 p.Weapon = newP.Weapon;
             }
+            framesToLive = 180;
         }
 
         public override void Draw(SpriteBatch spriteBatch)

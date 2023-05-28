@@ -16,7 +16,7 @@ namespace Abyss.ContentClasses
         public static Texture2D Map1;
         public static void Load(ContentManager content)
         {
-            Map1 = content.Load<Texture2D>(Path.Combine(MapGenerator, "GrassMap"));
+            Map1 = content.Load<Texture2D>(Path.Combine(MapGenerator, "Map1"));
         }
     }
 }

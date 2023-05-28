@@ -59,7 +59,7 @@ namespace Abyss
             Audios.Load(Content);
             SoundEffects.Load(Content);
 
-            _camera = new Camera(new Point(width, height), 2.2f);
+            _camera = new Camera(new Point(width, height), 1.2f);
             _input = new Input(null, _camera);
             _gameModel = new GameModel(_camera, _input);
             _hud = new GameHud(width, height);

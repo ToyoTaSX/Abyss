@@ -7,6 +7,7 @@
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/Bullet.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/ButtonOnActive.mp3</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/ButtonOnClick.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/EnemyDamage.mp3</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/font.spritefont</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/Background.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/GUI/ButtonBackgroundActive.png</File>
@@ -25,18 +26,41 @@
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/IngameFont.spritefont</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/MainMenu.mp3</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/MainTheme.mp3</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/GrassMap.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/Map1.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/Map2.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Box.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Bricks.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Dirt.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Grass.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Gravel.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Sandstone.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Bricks1.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Bricks2.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Bricks3.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Bricks4.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Bricks5.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Cement.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Dirt1.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Dirt2.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Dirt3.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Dirt4.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Dirt5.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Grass1.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Grass2.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Grass3.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Sand1.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Sand2.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/StartPosition.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Stone1.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Stone2.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Stone3.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/TargetBackgroundGreen.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/TargetBackgroundRed.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Tiles1.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Tiles2.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/Water.png</File>
-    <File>C:/Users/user/Desktop/Projects/Abyss/Content/player.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/MapTextures/WoodPlanks.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Player.png</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/PlayerDamage.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Shoot1.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Shoot2.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Shoot3.mp3</File>
+    <File>C:/Users/user/Desktop/Projects/Abyss/Content/Shoot4.mp3</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/TradeMenu.mp3</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/BAR.png</File>
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/Weapons/Colt.png</File>
@@ -53,6 +77,30 @@
     <File>C:/Users/user/Desktop/Projects/Abyss/Content/zombie.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

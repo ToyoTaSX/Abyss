@@ -21,22 +21,24 @@ namespace Abyss.Objects
 {
     public static class ObjectsFactory
     {
-        private static Dictionary<CellState, Texture2D> objectsImages = new Dictionary<CellState, Texture2D>()
+        private static Dictionary<CellState, Func<Texture2D>> objectsImages = new Dictionary<CellState, Func<Texture2D>>()
         {
-            {CellState.Grass, Arts.Grass },
-            {CellState.Bricks, Arts.Bricks },
-            {CellState.Water, Arts.Water },
-            {CellState.Gravel, Arts.Gravel },
-            {CellState.Dirt, Arts.Dirt },
-            {CellState.Box, Arts.Box },
-            {CellState.Sandstone, Arts.Sandstone },
-            {CellState.Empty, Arts.Grass },
-
+            {CellState.Empty, () => Arts.Grass },
+            {CellState.Box, () => Arts.Box },
+            {CellState.Bricks, () =>  Arts.Bricks },
+            {CellState.Cement, () => Arts.Cement },
+            {CellState.Dirt, () => Arts.Dirt },
+            {CellState.Grass, () => Arts.Grass },
+            {CellState.Sand, () => Arts.Sand },
+            {CellState.Stone, () => Arts.Stone },
+            {CellState.Tiles, () => Arts.Tiles },
+            {CellState.WoodPlanks, () => Arts.WoodPlanks },
+            {CellState.Water, () => Arts.Water },
         };
 
         public static GameObject CreateNewObject(CellState cellState, Vector2 position)
         {
-            return new GameObject(objectsImages[cellState], cellState, position);
+            return new GameObject(objectsImages[cellState](), cellState, position);
         }
     }
 }

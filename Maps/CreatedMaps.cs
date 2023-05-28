@@ -19,9 +19,13 @@ namespace Abyss.Maps
 {
     public static class CreatedMaps
     {
-        public static Map GrassMap { get => MapGenerator.CreateMapFromImage(MapImages.Map1); }
+        public static Map Map1 { get => MapGenerator.CreateMapFromImage(MapImages.Map1); }
+        public static Map Map2 { get => MapGenerator.CreateMapFromImage(MapImages.Map1); }
+        public static Map Map3 { get => MapGenerator.CreateMapFromImage(MapImages.Map1); }
+        public static Map Map4 { get => MapGenerator.CreateMapFromImage(MapImages.Map1); }
+        public static Map Map5 { get => MapGenerator.CreateMapFromImage(MapImages.Map1); }
 
-        public static Map EmptyMap { get => MapGenerator.CreateEmptyMap(20, 20); }
+        public static Map EmptyMap { get => MapGenerator.CreateEmptyMap(75, 75); }
         
     }
 }

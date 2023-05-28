@@ -89,7 +89,7 @@ namespace Abyss.Architecture
 
                     Objects.Add(ObjectsFactory.CreateNewObject(LevelMap[x, y], Map.ToAbsPosition(new Point(x, y))));
                 }
-            CreateBorders(LevelMap, CellState.Sandstone);
+            CreateBorders(LevelMap, CellState.Cement);
             
             var rnd = new Random();
             StartPos = emptyPos[rnd.Next(emptyPos.Count)];
@@ -146,7 +146,8 @@ namespace Abyss.Architecture
         {
             var rnd = new Random();
             targetsPos = targetsPos.Where(v => v.DistanceSquared(Player.Position) > 32 * 32 * 15 * 15).ToList();
-            for (int i = 0; i < Math.Min(_targetsCount, targetsPos.Count); i++)
+            var targetsCount = Math.Min(_targetsCount, targetsPos.Count);
+            for (int i = 0; i < targetsCount; i++)
             {
                 var pos = rnd.Next(targetsPos.Count());
                 Targets.Add(new Target(targetsPos[pos]));

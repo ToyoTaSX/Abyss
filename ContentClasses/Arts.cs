@@ -18,11 +18,14 @@ using Abyss.Objects;
 using Abyss.Weapons;
 using Abyss.Architecture;
 using System.IO;
+using System.Reflection.Metadata;
 
 namespace Abyss.ContentClasses
 {
     public static class Arts
     {
+        private static Random random = new Random();
+
         //GUI
         private static string GUI = "GUI";
 
@@ -51,13 +54,40 @@ namespace Abyss.ContentClasses
         public static Texture2D TargetBackgroundRed;
         public static Texture2D StartPosition;
 
-        public static Texture2D Grass;
-        public static Texture2D Water;
-        public static Texture2D Sandstone;
         public static Texture2D Box;
-        public static Texture2D Gravel;
-        public static Texture2D Dirt;
-        public static Texture2D Bricks;
+        public static Texture2D Cement;
+        public static Texture2D WoodPlanks;
+        public static Texture2D Water;
+
+        //Bricks
+        private static int bricksCount = 5;
+        private static List<Texture2D> bricksTextures;
+        public static Texture2D Bricks { get => bricksTextures[random.Next(bricksCount)]; }
+
+        //Dirt
+        private static int dirtsCount = 5;
+        private static List<Texture2D> dirtTextures;
+        public static Texture2D Dirt { get => dirtTextures[random.Next(dirtsCount)]; }
+
+        //Grass
+        private static int grassCount = 3;
+        private static List<Texture2D> grassTextures;
+        public static Texture2D Grass { get => grassTextures[random.Next(grassCount)]; }
+
+        //Sand
+        private static int sandCount = 2;
+        private static List<Texture2D> sandTextures;
+        public static Texture2D Sand { get => sandTextures[random.Next(sandCount)]; }
+
+        //Stone
+        private static int stoneCount = 3;
+        private static List<Texture2D> stoneTextures ;
+        public static Texture2D Stone{ get => stoneTextures[random.Next(stoneCount)]; }
+
+        //Tiles
+        private static int tilesCount = 2;
+        private static List<Texture2D> tilesTextures;
+        public static Texture2D Tiles { get => tilesTextures[random.Next(tilesCount)]; }
 
 
         //Без папки
@@ -79,13 +109,19 @@ namespace Abyss.ContentClasses
             IngameFont = content.Load<SpriteFont>("IngameFont");
 
             //Objects
-            Grass = content.Load<Texture2D>(Path.Combine(MapTextures,"Grass"));
-            Water = content.Load<Texture2D>(Path.Combine(MapTextures, "Water"));
-            Sandstone = content.Load<Texture2D>(Path.Combine(MapTextures, "Sandstone"));
             Box = content.Load<Texture2D>(Path.Combine(MapTextures, "Box"));
-            Gravel = content.Load<Texture2D>(Path.Combine(MapTextures, "Gravel"));
-            Dirt = content.Load<Texture2D>(Path.Combine(MapTextures, "Dirt"));
-            Bricks = content.Load<Texture2D>(Path.Combine(MapTextures, "Bricks"));
+            Cement = content.Load<Texture2D>(Path.Combine(MapTextures, "Cement"));
+            WoodPlanks = content.Load<Texture2D>(Path.Combine(MapTextures, "WoodPlanks"));
+            Water = content.Load<Texture2D>(Path.Combine(MapTextures, "Water"));
+
+            bricksTextures = LoadMapTextures(content, "Bricks", bricksCount);
+            dirtTextures= LoadMapTextures(content, "Dirt", dirtsCount);
+            grassTextures= LoadMapTextures(content, "Grass", grassCount);
+            sandTextures = LoadMapTextures(content, "Sand", sandCount);
+            stoneTextures = LoadMapTextures(content, "Stone", stoneCount);
+            tilesTextures = LoadMapTextures(content, "Tiles", tilesCount);
+
+
 
             TargetBackgroundGreen = content.Load<Texture2D>(Path.Combine(MapTextures, "TargetBackgroundGreen"));
             TargetBackgroundRed = content.Load<Texture2D>(Path.Combine(MapTextures, "TargetBackgroundRed"));
@@ -111,6 +147,15 @@ namespace Abyss.ContentClasses
             MainBackground = content.Load<Texture2D>(Path.Combine(GUI, "MainBackground"));
             SaveBacground = content.Load<Texture2D>(Path.Combine(GUI, "SaveBacground"));
             LoadBackground = content.Load<Texture2D>(Path.Combine(GUI, "LoadBackground"));
+        }
+
+        private static List<Texture2D> LoadMapTextures(ContentManager content, string name, int count)
+        {
+            var list = new List<Texture2D>();
+            var path = Path.Combine(MapTextures, name);
+            for (int i = 1; i <= count; i++)
+                list.Add(content.Load<Texture2D>(path + i.ToString()));
+            return list;
         }
     }
 }
