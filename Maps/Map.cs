@@ -1,29 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
-using System.Net.Sockets;
 
 namespace Abyss.Maps
 {
     public class Map
     {
-        private readonly CellState[,] mapCells;
-        public Dictionary<Point, Dictionary<Point, Point>> pointToPoint;
+        private readonly CellState[,] _mapCells;
+        private Dictionary<Point, Dictionary<Point, Point>> _pointToPoint;
         public readonly List<Point> PossibleTargets;
         public readonly int Width;
         public readonly int Height;
@@ -45,13 +31,13 @@ namespace Abyss.Maps
             {
                 if (x < 0 || y < 0 || x >= Width || y >= Height)
                     throw new ArgumentOutOfRangeException();
-                return mapCells[x, y];
+                return _mapCells[x, y];
             }
         }
 
         public Map(CellState[,] mapCells)
         {
-            this.mapCells = mapCells;
+            this._mapCells = mapCells;
             Width = mapCells.GetLength(0);
             Height = mapCells.GetLength(1);
             GeneratePathTable();
@@ -63,7 +49,7 @@ namespace Abyss.Maps
             var point1 = ToMapPosition(startPos);
             var point2 = ToMapPosition(endPos);
             var direction = Point.Zero;
-            if (pointToPoint.TryGetValue(point1, out var dict))
+            if (_pointToPoint.TryGetValue(point1, out var dict))
                 if (dict.TryGetValue(point2, out var result))
                     direction = result;
             var nextPos = point1 + direction;
@@ -97,13 +83,13 @@ namespace Abyss.Maps
         #region Path Table Generation
         private void GeneratePathTable()
         {
-            pointToPoint = new Dictionary<Point, Dictionary<Point, Point>>();
+            _pointToPoint = new Dictionary<Point, Dictionary<Point, Point>>();
             var tasks = new List<Task<(Point StartPos, Dictionary<Point, Point> Pathes)>>();
             for (int x = 0; x < Width; x++)
                 for (int y = 0; y < Height; y++)
                 {
                     var point = new Point(x, y);
-                    if (!EmtyStates.Contains(mapCells[x, y]))
+                    if (!EmtyStates.Contains(_mapCells[x, y]))
                         continue;
                     var task = Task.Run(() => FindPaths(point));
                     tasks.Add(task);
@@ -115,13 +101,13 @@ namespace Abyss.Maps
             foreach (var task in tasks)
             {
                 if (task.Result.Pathes != null && task.Result.Pathes.Count > 0)
-                    pointToPoint[task.Result.StartPos] = task.Result.Pathes;
+                    _pointToPoint[task.Result.StartPos] = task.Result.Pathes;
             }
         }
 
         private (Point StartPos, Dictionary<Point, Point> Pathes) FindPaths(Point startPos)
         {
-            if (!EmtyStates.Contains(mapCells[startPos.X, startPos.Y]))
+            if (!EmtyStates.Contains(_mapCells[startPos.X, startPos.Y]))
                 return (startPos, null);
 
             var firstSteps = new Dictionary<Point, Point>();

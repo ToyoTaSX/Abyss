@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abyss.Architecture;
+﻿using Abyss.Architecture;
 using Abyss.ContentClasses;
+using System;
 
 namespace Abyss.Gui
 {

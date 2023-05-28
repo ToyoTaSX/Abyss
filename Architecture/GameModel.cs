@@ -1,22 +1,8 @@
 ﻿using Abyss.Entities;
-using Abyss.Maps;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
-using SharpDX.MediaFoundation;
-using Microsoft.Xna.Framework;
 
 namespace Abyss.Architecture
 {

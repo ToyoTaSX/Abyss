@@ -1,31 +1,18 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Abyss.Entities;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abyss.Entities;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
+using Microsoft.Xna.Framework.Input;
 
 namespace Abyss.Architecture
 {
     public class Input
     {
-        private KeyboardState keyboardState, lastKeyboardState;
-        private MouseState mouseState, lastMouseState;
-        public bool IsLmbDown { get => mouseState.LeftButton == ButtonState.Pressed || lastMouseState.LeftButton == ButtonState.Pressed; }
-        public bool IsRmbDown { get => mouseState.RightButton == ButtonState.Pressed || lastMouseState.RightButton == ButtonState.Pressed; }
-        public Vector2 MousePosition { get { return new Vector2(mouseState.X, mouseState.Y); } }
+        private KeyboardState _keyboardState, _lastKeyboardState;
+        private MouseState _mouseState, _lastMouseState;
+        public bool IsLmbDown { get => _mouseState.LeftButton == ButtonState.Pressed || _lastMouseState.LeftButton == ButtonState.Pressed; }
+        public bool IsRmbDown { get => _mouseState.RightButton == ButtonState.Pressed || _lastMouseState.RightButton == ButtonState.Pressed; }
+        public Vector2 MousePosition { get { return new Vector2(_mouseState.X, _mouseState.Y); } }
         public Player Player { get; set; }
-        public Camera Camera { get; }
+        public Camera Camera { get; set; }
 
         public Input(Player player, Camera camera)
         { 
@@ -35,38 +22,38 @@ namespace Abyss.Architecture
 
         public void Update()
         {
-            lastKeyboardState = keyboardState;
-            lastMouseState = mouseState;
-            keyboardState = Keyboard.GetState();
-            mouseState = Mouse.GetState();
+            _lastKeyboardState = _keyboardState;
+            _lastMouseState = _mouseState;
+            _keyboardState = Keyboard.GetState();
+            _mouseState = Mouse.GetState();
         }
 
         public bool WasKeyPressed(Keys key)
         {
-            return lastKeyboardState.IsKeyUp(key) && keyboardState.IsKeyDown(key);
+            return _lastKeyboardState.IsKeyUp(key) && _keyboardState.IsKeyDown(key);
         }
 
         public bool WasLMBPressed()
         {
-            return lastMouseState.LeftButton == ButtonState.Released && IsLmbDown;
+            return _lastMouseState.LeftButton == ButtonState.Released && IsLmbDown;
         }
 
         public bool WasRMBPressed()
         {
-            return lastMouseState.RightButton == ButtonState.Released && IsRmbDown;
+            return _lastMouseState.RightButton == ButtonState.Released && IsRmbDown;
         }
 
         public Vector2 GetMovementDirection()
         {
 
             var direction = Vector2.Zero;
-            if (keyboardState.IsKeyDown(Keys.A))
+            if (_keyboardState.IsKeyDown(Keys.A))
                 direction.X -= 1;
-            if (keyboardState.IsKeyDown(Keys.D))
+            if (_keyboardState.IsKeyDown(Keys.D))
                 direction.X += 1;
-            if (keyboardState.IsKeyDown(Keys.W))
+            if (_keyboardState.IsKeyDown(Keys.W))
                 direction.Y -= 1;
-            if (keyboardState.IsKeyDown(Keys.S))
+            if (_keyboardState.IsKeyDown(Keys.S))
                 direction.Y += 1;
 
             if (direction.LengthSquared() > 1)

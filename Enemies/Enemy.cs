@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Abyss.Architecture;
+using Abyss.ContentClasses;
 using Abyss.Maps;
 using Abyss.Weapons;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
+using System;
 
 namespace Abyss.Enemies
 {
@@ -23,9 +12,9 @@ namespace Abyss.Enemies
     {
         public int Health;
         public Weapon Weapon;
-        private int framesFromDamage;
-        protected Vector2 target;
-        protected bool IsActive;
+        private int _framesFromDamage;
+        protected Vector2 _nextTarget;
+        protected bool _isActive;
 
         public override bool IsExpired()
         {
@@ -34,35 +23,35 @@ namespace Abyss.Enemies
 
         public override void OnDamage(Bullet bullet)
         {
-            if (framesFromDamage < 2)
+            if (_framesFromDamage < 2)
                 return;
             Health -= bullet.Damage;
-            framesFromDamage = 0;
+            _framesFromDamage = 0;
             SoundEffects.EnemyDamage.Play();
         }
 
         public override void Update(GameModel game)
         {
             UpdateWeapon(Weapon);
-            framesFromDamage++;
+            _framesFromDamage++;
         }
 
         protected void MoveToPlayer(GameModel game)
         {
             var oldPos = Position;
 
-            if (Position.AlmostEqual(target))
+            if (Position.AlmostEqual(_nextTarget))
             {
-                var nextPos = game.CurrentLevel.LevelMap.GetNextPosition(target, game.Player.CenterPosition);
-                target = nextPos;
+                var nextPos = game.CurrentLevel.LevelMap.GetNextPosition(_nextTarget, game.Player.CenterPosition);
+                _nextTarget = nextPos;
             }
 
-            if (Speed * Speed > Position.DistanceSquared(target))
+            if (Speed * Speed > Position.DistanceSquared(_nextTarget))
             {
-                Position = target;
+                Position = _nextTarget;
                 return;
             }
-            var direction = target - Position;
+            var direction = _nextTarget - Position;
             if (direction != Vector2.Zero)
                 direction.Normalize();
 

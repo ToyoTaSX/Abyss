@@ -1,23 +1,10 @@
-﻿using Abyss.ContentClasses;
+﻿using Abyss.Architecture;
+using Abyss.ContentClasses;
 using Abyss.Entities;
 using Abyss.Weapons;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
 
 namespace Abyss.Enemies
 {
@@ -29,7 +16,7 @@ namespace Abyss.Enemies
             Health = 100;
             Position = position;
             Speed = 2;
-            target = position;
+            _nextTarget = position;
             Weapon = WeaponsFactory.CreateWeapon(weapon, new List<Type>() { typeof(Player), typeof(Bullet) });
         }
 
@@ -43,14 +30,14 @@ namespace Abyss.Enemies
         {
             if ((game.Player.Position - Position).LengthSquared() > 32 * 32 * 20 * 20)
             {
-                IsActive = false;
+                _isActive = false;
                 return;
             }
             var oldPos = Position;
             var canShoot = IsCanShootToPlayer(game);
-            if (canShoot || IsActive)
-                IsActive = true;
-            if (!IsActive)
+            if (canShoot || _isActive)
+                _isActive = true;
+            if (!_isActive)
                 return;
 
             if (canShoot)

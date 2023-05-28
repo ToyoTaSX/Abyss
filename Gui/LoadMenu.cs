@@ -1,13 +1,10 @@
 ﻿using Abyss.Architecture;
 using Abyss.ContentClasses;
 using Abyss.Enemies;
-using Abyss.Entities;
 using Abyss.Weapons;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Abyss.Gui

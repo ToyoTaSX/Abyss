@@ -247,3 +247,6 @@ C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\MapTexture
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\MapTextures\WoodPlanks.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\MapGenerator\Map1.xnb
 C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\MapGenerator\Map2.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\MapGenerator\Map3.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\MapGenerator\Map4.xnb
+C:\Users\user\Desktop\Projects\Abyss\bin\Debug\net6.0-windows\Content\MapGenerator\Map5.xnb

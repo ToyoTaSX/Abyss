@@ -1,30 +1,14 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Content;
-using SharpDX.MediaFoundation;
-using Abyss;
-using Abyss.Maps;
-using System.Drawing;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
 using System.IO;
-using System.Reflection.Metadata;
 
 namespace Abyss.ContentClasses
 {
     public static class Arts
     {
-        private static Random random = new Random();
+        private static Random _random = new Random();
 
         //GUI
         private static string GUI = "GUI";
@@ -62,32 +46,32 @@ namespace Abyss.ContentClasses
         //Bricks
         private static int bricksCount = 5;
         private static List<Texture2D> bricksTextures;
-        public static Texture2D Bricks { get => bricksTextures[random.Next(bricksCount)]; }
+        public static Texture2D Bricks { get => bricksTextures[_random.Next(bricksCount)]; }
 
         //Dirt
         private static int dirtsCount = 5;
         private static List<Texture2D> dirtTextures;
-        public static Texture2D Dirt { get => dirtTextures[random.Next(dirtsCount)]; }
+        public static Texture2D Dirt { get => dirtTextures[_random.Next(dirtsCount)]; }
 
         //Grass
         private static int grassCount = 3;
         private static List<Texture2D> grassTextures;
-        public static Texture2D Grass { get => grassTextures[random.Next(grassCount)]; }
+        public static Texture2D Grass { get => grassTextures[_random.Next(grassCount)]; }
 
         //Sand
         private static int sandCount = 2;
         private static List<Texture2D> sandTextures;
-        public static Texture2D Sand { get => sandTextures[random.Next(sandCount)]; }
+        public static Texture2D Sand { get => sandTextures[_random.Next(sandCount)]; }
 
         //Stone
         private static int stoneCount = 3;
         private static List<Texture2D> stoneTextures ;
-        public static Texture2D Stone{ get => stoneTextures[random.Next(stoneCount)]; }
+        public static Texture2D Stone{ get => stoneTextures[_random.Next(stoneCount)]; }
 
         //Tiles
         private static int tilesCount = 2;
         private static List<Texture2D> tilesTextures;
-        public static Texture2D Tiles { get => tilesTextures[random.Next(tilesCount)]; }
+        public static Texture2D Tiles { get => tilesTextures[_random.Next(tilesCount)]; }
 
 
         //Без папки

@@ -1,20 +1,10 @@
-﻿using Abyss.ContentClasses;
-using Abyss.Objects;
+﻿using Abyss.Architecture;
+using Abyss.ContentClasses;
+using Abyss.Maps;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
 
 namespace Abyss.Weapons
 {

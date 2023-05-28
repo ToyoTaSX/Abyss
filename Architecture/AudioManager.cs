@@ -1,32 +1,25 @@
 ﻿using Abyss.ContentClasses;
-using Abyss.Gui;
 using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Abyss.Architecture
 {
     public class AudioManager
     {
-        private GameModel game;
-        private GameState lastGameState;
-
+        private GameModel _game;
+        private GameState _lastGameState;
 
         public AudioManager(GameModel game)
         {
-            this.game = game;
-            lastGameState = game.State;
+            this._game = game;
+            _lastGameState = game.State;
         }
 
         public void Update()
         {
-            if (game.State == lastGameState)
+            if (_game.State == _lastGameState)
                 return;
 
-            switch (game.State)
+            switch (_game.State)
             {
                 case GameState.Running:
                     MediaPlayer.Play(Audios.MainTheme); break;
@@ -35,7 +28,7 @@ namespace Abyss.Architecture
                 case GameState.Trading:
                     MediaPlayer.Play(Audios.TradeMenu); break;
             }
-            lastGameState = game.State;
+            _lastGameState = _game.State;
 
         }
     }

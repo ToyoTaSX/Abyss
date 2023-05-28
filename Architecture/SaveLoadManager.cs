@@ -11,18 +11,18 @@ namespace Abyss.Architecture
 {
     public static class SaveLoadManager
     {
-        private static readonly string saveFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Abyss", "usersaves");
+        private static readonly string _saveFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Abyss", "usersaves");
 
         public static void SavePlayerData(SaveData playerData, string fileName)
         {
-            string savePath = Path.Combine(saveFolderPath, fileName);
+            string savePath = Path.Combine(_saveFolderPath, fileName);
             string json = JsonConvert.SerializeObject(playerData);
             File.WriteAllText(savePath, json);
         }
 
         public static SaveData LoadPlayerData(string fileName)
         {
-            string savePath = Path.Combine(saveFolderPath, fileName);
+            string savePath = Path.Combine(_saveFolderPath, fileName);
             if (!File.Exists(savePath))
             {
                 return null;
@@ -34,7 +34,7 @@ namespace Abyss.Architecture
 
         public static string LoadSavesDateStr(string fileName)
         {
-            string savePath = Path.Combine(saveFolderPath, fileName);
+            string savePath = Path.Combine(_saveFolderPath, fileName);
             if (!File.Exists(savePath))
             {
                 return "Пусто";

@@ -1,25 +1,11 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Abyss.Architecture;
+using Abyss.ContentClasses;
+using Abyss.Enemies;
+using Abyss.Weapons;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.DirectoryServices;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Microsoft.Xna.Framework.Input;
-using System.Diagnostics;
-using Abyss.Enemies;
-using Abyss.ContentClasses;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
 
 namespace Abyss.Entities
 {
@@ -27,25 +13,25 @@ namespace Abyss.Entities
     {
         public Weapon Weapon;
         public int Health { get; set; }
-        public int Money;
-        public int MedecineCount;
-        private int framesFromDamage = 5;
+        public int Money { get; set; }
+        public int MedecineCount { get; set; }
+        private int _framesFromDamage = 5;
         public int FramesFromMedicine = 10;
         public Player()
         {
             image = Arts.Player;
             Speed = 5;
-            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Cheat, new List<Type>() { typeof(Enemy), typeof(Bullet) });
+            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Revolver, new List<Type>() { typeof(Enemy), typeof(Bullet) });
             Health = 999;
             MedecineCount = 2;
         }
 
         public override void OnDamage(Bullet bullet)
         {
-            if (framesFromDamage < 5)
+            if (_framesFromDamage < 5)
                 return;
             Health -= bullet.Damage;
-            framesFromDamage = 0;
+            _framesFromDamage = 0;
             SoundEffects.PlayerDamage.Play();
         }
 
@@ -56,7 +42,7 @@ namespace Abyss.Entities
 
         public override void Update(GameModel game)
         {
-            framesFromDamage++;
+            _framesFromDamage++;
             FramesFromMedicine++;
             Medicine(game);
             Move(game);

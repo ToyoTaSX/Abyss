@@ -1,16 +1,14 @@
-﻿using Abyss.ContentClasses;
-using Abyss.Architecture;
+﻿using Abyss.Architecture;
+using Abyss.ContentClasses;
+using Abyss.Gui;
+using Abyss.Hud;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Abyss.Entities;
-using Abyss.Hud;
-using Abyss.Gui;
+using Microsoft.Xna.Framework.Media;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System;
-using System.Reflection;
-using Microsoft.Xna.Framework.Media;
 
 namespace Abyss
 {
@@ -23,19 +21,18 @@ namespace Abyss
         private GameHud _hud;
         private Input _input;
         private LoadingScreen _loadingScreen;
-        private bool _isOnPause;
         private View _mainMenuView;
         private View _ingameView;
-        private int width;
-        private int height;
-        private AudioManager audioManager;
+        private int _width;
+        private int _height;
+        private AudioManager _audioManager;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferHeight = height = 1080;
-            _graphics.PreferredBackBufferWidth = width = 1920;
-            //_graphics.ToggleFullScreen();
+            _graphics.PreferredBackBufferHeight = _height = 1080;
+            _graphics.PreferredBackBufferWidth = _width = 1920;
+            _graphics.ToggleFullScreen();
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -59,35 +56,35 @@ namespace Abyss
             Audios.Load(Content);
             SoundEffects.Load(Content);
 
-            _camera = new Camera(new Point(width, height), 1.2f);
+            _camera = new Camera(new Point(_width, _height), 2.2f);
             _input = new Input(null, _camera);
             _gameModel = new GameModel(_camera, _input);
-            _hud = new GameHud(width, height);
+            _hud = new GameHud(_width, _height);
             _loadingScreen = new LoadingScreen();
             var menuesMain = new List<Menu>()
             {
-                new MainMenu(width, height),
-                new SaveMenu(width, height),
-                new LoadMenu(width, height),
-                new EndMenu(width, height)
+                new MainMenu(_width, _height),
+                new SaveMenu(_width, _height),
+                new LoadMenu(_width, _height),
+                new EndMenu(_width, _height)
             };
             _mainMenuView = new View(_gameModel, menuesMain, MenuState.MainMenu);
 
             var tradingMenues = new List<Menu>()
             {
-                new EmptyMenue(width, height),
-                new TradingMenu(width, height),
-                new DeadMenu(width, height),
+                new EmptyMenue(_width, _height),
+                new TradingMenu(_width, _height),
+                new DeadMenu(_width, _height),
             };
             _ingameView = new View(_gameModel, tradingMenues, MenuState.Empty);
 
             MediaPlayer.Play(Audios.MainMenu);
-            audioManager = new AudioManager(_gameModel);
+            _audioManager = new AudioManager(_gameModel);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            audioManager.Update();
+            _audioManager.Update();
             base.Update(gameTime);
             _input.Update();
             if (_input.WasKeyPressed(Keys.Escape) && _gameModel.State == GameState.Running)
@@ -132,7 +129,7 @@ namespace Abyss
             if (_gameModel.State == GameState.Loading)
             {
                 _spriteBatch.Begin();
-                _loadingScreen.Draw(_spriteBatch, width, height);
+                _loadingScreen.Draw(_spriteBatch, _width, _height);
                 _spriteBatch.End();
             }
 

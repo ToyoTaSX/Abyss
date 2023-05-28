@@ -7,9 +7,6 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Abyss.Gui
 {
@@ -53,7 +50,7 @@ namespace Abyss.Gui
             foreach (var weaponName in weapons)
             {
                 var weapon = WeaponsFactory.CreateWeapon(weaponName, null);
-                var text = $"{weaponName} (УР:{weapon.Damage}, СКОР:{weapon.BulletSpeed}, КД:{weapon.Cooldown}) - {Costs[weaponName]}м";
+                var text = $"{weaponName} (УР:{weapon.Damage}, СКОР:{weapon.BulletSpeed}, КД:{weapon.FramesCooldown}) - {Costs[weaponName]}м";
                 var act = CreateBuyFunction(weaponName);
                 var btn = new Button(
                                 act,

@@ -1,16 +1,8 @@
 ﻿using Abyss.Architecture;
 using Abyss.ContentClasses;
-using Abyss.Enemies;
 using Abyss.Weapons;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security.Cryptography.Xml;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Abyss.Hud
 {
@@ -19,14 +11,14 @@ namespace Abyss.Hud
         public readonly int Width;
         public readonly int Heigth;
 
-        private int health;
-        private int money;
-        private int countOfTargets;
-        private int alreadyCollectedCount;
-        private int medecine;
-        private Weapon Weapon;
-        private int framesMedicine;
-        private int framesToStart;
+        private int _health;
+        private int _money;
+        private int _countOfTargets;
+        private int _alreadyCollectedCount;
+        private int _medecine;
+        private Weapon _weapon;
+        private int _framesMedicine;
+        private int _framesToStart;
 
         public GameHud(int width, int heigth)
         {
@@ -35,14 +27,14 @@ namespace Abyss.Hud
         }
         public void Update(GameModel game)
         {
-            health = game.Player.Health;
-            money = game.Player.Money;
-            countOfTargets = game.CurrentLevel.Targets.Count;
-            alreadyCollectedCount = game.CurrentLevel.CollectedTargetsCount;
-            Weapon = game.Player.Weapon;
-            medecine = game.Player.MedecineCount;
-            framesMedicine = game.Player.FramesFromMedicine > 100 ? 100 : game.Player.FramesFromMedicine;
-            framesToStart = game.FramesToStart;
+            _health = game.Player.Health;
+            _money = game.Player.Money;
+            _countOfTargets = game.CurrentLevel.Targets.Count;
+            _alreadyCollectedCount = game.CurrentLevel.CollectedTargetsCount;
+            _weapon = game.Player.Weapon;
+            _medecine = game.Player.MedecineCount;
+            _framesMedicine = game.Player.FramesFromMedicine > 100 ? 100 : game.Player.FramesFromMedicine;
+            _framesToStart = game.FramesToStart;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -54,41 +46,41 @@ namespace Abyss.Hud
             // Сердечко
             var heartPos = hudTopLeft + new Vector2(20, 15);
             spriteBatch.Draw(Arts.Heart, heartPos, null, Color.White, 0, Vector2.Zero, 2f, 0, 0);
-            spriteBatch.DrawString(Arts.Font, $"{health}", heartPos + textDelta, Color.WhiteSmoke);
+            spriteBatch.DrawString(Arts.Font, $"{_health}", heartPos + textDelta, Color.WhiteSmoke);
 
             // Монетка
             var coinPos = heartPos + paramDelta;
             spriteBatch.Draw(Arts.Money, coinPos, null, Color.White, 0, Vector2.Zero, 2f, 0, 0);
-            spriteBatch.DrawString(Arts.Font, $"{money}", coinPos + textDelta, Color.WhiteSmoke);
+            spriteBatch.DrawString(Arts.Font, $"{_money}", coinPos + textDelta, Color.WhiteSmoke);
 
             // Аптечки
             var healthPos = coinPos + paramDelta;
             spriteBatch.Draw(Arts.Health, healthPos, null, Color.White, 0, Vector2.Zero, 2f, 0, 0);
-            var str = framesMedicine == 100 ? "готов" : framesMedicine.ToString();
-            if (medecine > 0)
+            var str = _framesMedicine == 100 ? "готов" : _framesMedicine.ToString();
+            if (_medecine > 0)
                 str = '(' + str + ")";
             else
                 str = "";
-            spriteBatch.DrawString(Arts.Font, $"{medecine} {str}", healthPos + textDelta, Color.WhiteSmoke);
+            spriteBatch.DrawString(Arts.Font, $"{_medecine} {str}", healthPos + textDelta, Color.WhiteSmoke);
 
             // Звездочка
             var trophyPos = new Vector2(20, 50);
             spriteBatch.Draw(Arts.Trophy, trophyPos, null, Color.White, 0, Vector2.Zero, 2f, 0, 0);
-            spriteBatch.DrawString(Arts.Font, $"{alreadyCollectedCount}/{countOfTargets}", trophyPos + textDelta, Color.Black);
+            spriteBatch.DrawString(Arts.Font, $"{_alreadyCollectedCount}/{_countOfTargets}", trophyPos + textDelta, Color.Black);
 
             // Оружие
-            if (Weapon == null)
+            if (_weapon == null)
                 return;
-            var scale = 80 / Weapon.Image.Height;
-            var imagePos = new Vector2(Width / 2 - Weapon.Image.Width * scale / 2, Heigth - 80);
-            spriteBatch.Draw(Weapon.Image, imagePos, null, Color.White, 0, Vector2.Zero, scale, 0, 0);
-            var textPos = new Vector2(imagePos.X + Weapon.Image.Width * scale + 100, (healthPos + textDelta).Y);
-            spriteBatch.DrawString(Arts.Font, $"{Weapon.Name}   [ УР:{Weapon.Damage}    СКОР:{Weapon.BulletSpeed} ]", textPos, Color.Gray);
+            var scale = 80 / _weapon.Image.Height;
+            var imagePos = new Vector2(Width / 2 - _weapon.Image.Width * scale / 2, Heigth - 80);
+            spriteBatch.Draw(_weapon.Image, imagePos, null, Color.White, 0, Vector2.Zero, scale, 0, 0);
+            var textPos = new Vector2(imagePos.X + _weapon.Image.Width * scale + 100, (healthPos + textDelta).Y);
+            spriteBatch.DrawString(Arts.Font, $"{_weapon.Name}   [ УР:{_weapon.Damage}    СКОР:{_weapon.BulletSpeed} ]", textPos, Color.Gray);
 
             //Обратный отсчет
-            if (framesToStart > 0)
+            if (_framesToStart > 0)
             {
-                var text = ((framesToStart + 20) / 20).ToString();
+                var text = ((_framesToStart + 20) / 20).ToString();
                 var startScale = 3;
                 var v = Arts.Font.MeasureString(text) * startScale;
                 var pos = new Vector2(1920, 1080) / 2 - v / 2;

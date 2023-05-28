@@ -1,22 +1,7 @@
-﻿using SharpDX.Direct3D9;
-using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Xna.Framework;
-using System.Text;
-using System.Threading.Tasks;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
-using System.Drawing;
-using Color = Microsoft.Xna.Framework.Color;
-using Microsoft.Xna.Framework.Graphics;
-using System.CodeDom;
 
 namespace Abyss.Maps
 {
@@ -97,11 +82,11 @@ namespace Abyss.Maps
                 for (int y = 0; y < colors.GetLength(1); y++)
                 {
                     var p = colors[x, y];
-                    //var state = colorState.MinBy(kv => kv.Key.DistanceTo(p)).Value;
-                    if (colorState.TryGetValue(p, out var state))
-                        result[x, y] = state;
-                    else
-                        result[x, y] = CellState.Grass;
+                    result[x, y] = colorState.MinBy(kv => kv.Key.DistanceTo(p)).Value;
+                    //if (colorState.TryGetValue(p, out var state))
+                    //    result[x, y] = state;
+                    //else
+                    //    result[x, y] = CellState.Grass;
                 }
             return new Map(result);
         }

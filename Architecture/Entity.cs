@@ -1,15 +1,8 @@
 ﻿using Abyss.ContentClasses;
 using Abyss.Objects;
 using Abyss.Weapons;
-using Abyss;
-using Abyss.Maps;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Architecture;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SharpDX.Direct3D9;
-using System;
 
 namespace Abyss.Architecture
 {

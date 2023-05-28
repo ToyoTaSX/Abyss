@@ -1,5 +1,4 @@
-﻿using Abyss.ContentClasses;
-using Abyss.Enemies;
+﻿using Abyss.Enemies;
 using Abyss.Entities;
 using Abyss.Maps;
 using Abyss.Objects;
@@ -9,15 +8,6 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Abyss;
-using Abyss.Maps;
-using Abyss.ContentClasses;
-using Abyss.Enemies;
-using Abyss.Entities;
-using Abyss.Objects;
-using Abyss.Weapons;
-using Abyss.Architecture;
-using System.DirectoryServices;
 
 namespace Abyss.Architecture
 {
@@ -146,8 +136,8 @@ namespace Abyss.Architecture
         {
             var rnd = new Random();
             targetsPos = targetsPos.Where(v => v.DistanceSquared(Player.Position) > 32 * 32 * 15 * 15).ToList();
-            var targetsCount = Math.Min(_targetsCount, targetsPos.Count);
-            for (int i = 0; i < targetsCount; i++)
+            _targetsCount = Math.Min(_targetsCount, targetsPos.Count);
+            for (int i = 0; i < _targetsCount; i++)
             {
                 var pos = rnd.Next(targetsPos.Count());
                 Targets.Add(new Target(targetsPos[pos]));
