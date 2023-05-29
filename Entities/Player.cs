@@ -15,23 +15,23 @@ namespace Abyss.Entities
         public int Health { get; set; }
         public int Money { get; set; }
         public int MedecineCount { get; set; }
-        private int _framesFromDamage = 5;
+        public int FramesFromDamage = -25;
         public int FramesFromMedicine = 10;
         public Player()
         {
             image = Arts.Player;
             Speed = 5;
-            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Revolver, new List<Type>() { typeof(Enemy), typeof(Bullet) });
+            Weapon = WeaponsFactory.CreateWeapon(WeaponName.Thompson, new List<Type>() { typeof(Enemy), typeof(Bullet) });
             Health = 999;
             MedecineCount = 2;
         }
 
         public override void OnDamage(Bullet bullet)
         {
-            if (_framesFromDamage < 5)
+            if (FramesFromDamage < 5)
                 return;
             Health -= bullet.Damage;
-            _framesFromDamage = 0;
+            FramesFromDamage = 0;
             SoundEffects.PlayerDamage.Play();
         }
 
@@ -42,7 +42,7 @@ namespace Abyss.Entities
 
         public override void Update(GameModel game)
         {
-            _framesFromDamage++;
+            FramesFromDamage++;
             FramesFromMedicine++;
             Medicine(game);
             Move(game);

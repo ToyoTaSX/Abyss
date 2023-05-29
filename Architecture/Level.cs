@@ -84,6 +84,7 @@ namespace Abyss.Architecture
             var rnd = new Random();
             StartPos = emptyPos[rnd.Next(emptyPos.Count)];
             Player.Position = StartPos;
+            Player.FramesFromDamage = -120;
             StartPosition = new StartPosition(StartPos - new Vector2(32, 32));
             CreateEnemies(emptyPos);
             CreateTargets(LevelMap.PossibleTargets.Select(p => Map.ToAbsPosition(p)).ToList());
@@ -99,12 +100,14 @@ namespace Abyss.Architecture
 
             Entities.Clear();
             Entities.Add(Player);
+            Bullets.Clear();
             Targets.Clear();
             Player.Position = StartPos;
             StartPosition = new StartPosition(StartPos - new Vector2(32, 32));
             Player.Health = _playerHealthOnStart;
             Player.MedecineCount = _playerMedicineOnStart;
             Player.Money = _playerMoneyOnStart;
+            Player.FramesFromDamage = -120;
             CreateEnemies(emptyPos);
             CreateTargets(LevelMap.PossibleTargets.Select(p => Map.ToAbsPosition(p)).ToList());
         }
@@ -122,7 +125,7 @@ namespace Abyss.Architecture
         private void CreateEnemies(List<Vector2> emptyPos)
         {
             var rnd = new Random();
-            var weapons = new[] { WeaponName.Revolver, WeaponName.DP28, WeaponName.MP40, WeaponName.Mosin };
+            var weapons = new[] { WeaponName.DP28, WeaponName.MP40, WeaponName.Colt };
             emptyPos = emptyPos.Where(v => v.DistanceSquared(Player.Position) > 32 * 32 * 10 * 10).ToList();
             for (int i = 0; i < Math.Min(_enemiesCount, emptyPos.Count / 4); i++)
             {

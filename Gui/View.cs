@@ -37,7 +37,7 @@ namespace Abyss.Gui
         public void Update(MenuState state)
         {
             if (_state != state) 
-                _state = state;
+                MenuState = state;
             CurrentMenu.Update(this);
         }
 

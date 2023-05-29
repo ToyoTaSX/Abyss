@@ -90,7 +90,11 @@ namespace Abyss.Gui
             Buttons.Add(btn1);
             ButtonsCosts[btn1] = 100;
 
-            var resumeAction = new Action<View>((v) => { v.Game.State = GameState.Loading; });
+            var resumeAction = new Action<View>((v) => 
+            { 
+                v.Game.State = GameState.Loading;
+                v.MenuState = MenuState.Empty;
+            });
             var resumeButton = new Button(resumeAction, (int)pos.X + 1100, Height - 150, 400, 100, "Продолжить");
             Buttons.Add(resumeButton);
         }

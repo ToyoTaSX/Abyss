@@ -23,7 +23,7 @@ namespace Abyss.Gui
         public override void Update(View view)
         {
             framesToLive--;
-            if (framesToLive == 0)
+            if (framesToLive <= 0)
             {
                 view.MenuState = MenuState.MainMenu;
                 view.Game.State = GameState.Menue;

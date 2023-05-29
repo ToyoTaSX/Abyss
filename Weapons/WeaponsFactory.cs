@@ -24,25 +24,25 @@ namespace Abyss.Weapons
             { WeaponName.Gewehr43, new WeaponData(WeaponName.Gewehr43, 20, 35, 3, 25, WeaponImages.Gewehr43, SoundEffects.Shoot3)},
 
             //3
-            { WeaponName.Kar98K, new WeaponData(WeaponName.Kar98K, 30, 95, 4, 50, WeaponImages.Kar98K, SoundEffects.Shoot4)},
-            { WeaponName.Mosin, new WeaponData(WeaponName.Mosin, 30, 95, 4, 50, WeaponImages.Mosin, SoundEffects.Shoot4)},
+            { WeaponName.Kar98K, new WeaponData(WeaponName.Kar98K, 30, 100, 4, 60, WeaponImages.Kar98K, SoundEffects.Shoot4)},
+            { WeaponName.Mosin, new WeaponData(WeaponName.Mosin, 30, 100, 4, 60, WeaponImages.Mosin, SoundEffects.Shoot4)},
 
             // 4
-            { WeaponName.MP40, new WeaponData(WeaponName.MP40, 10, 5, 1, 5, WeaponImages.MP40, SoundEffects.Shoot1)},
-            { WeaponName.PPSH, new WeaponData(WeaponName.PPSH, 10, 15, 1, 15, WeaponImages.PPSH, SoundEffects.Shoot1)},
+            { WeaponName.MP40, new WeaponData(WeaponName.MP40, 10, 5, 1, 7, WeaponImages.MP40, SoundEffects.Shoot1)},
+            { WeaponName.PPSH, new WeaponData(WeaponName.PPSH, 10, 15, 1, 10, WeaponImages.PPSH, SoundEffects.Shoot1)},
 
             // 5
-            { WeaponName.Revolver, new WeaponData(WeaponName.Revolver, 30, 35, 1, 60, WeaponImages.Revolver, SoundEffects.Shoot3)},
+            { WeaponName.Revolver, new WeaponData(WeaponName.Revolver, 30, 50, 1, 20, WeaponImages.Revolver, SoundEffects.Shoot3)},
 
             // 6
             { WeaponName.Stg44, new WeaponData(WeaponName.Stg44, 10, 5, 1, 7, WeaponImages.Stg44, SoundEffects.Shoot2)},
-            { WeaponName.Thompson, new WeaponData(WeaponName.Thompson, 10, 15, 1, 20, WeaponImages.Thompson, SoundEffects.Shoot2)},
+            { WeaponName.Thompson, new WeaponData(WeaponName.Thompson, 10, 15, 1, 9, WeaponImages.Thompson, SoundEffects.Shoot2)},
 
             //1
             { WeaponName.LMG99, new WeaponData(WeaponName.LMG99, 20, 15, 1, 2, WeaponImages.LMG99, SoundEffects.Shoot3)},
 
             //0
-            { WeaponName.Cheat, new WeaponData(WeaponName.Cheat, 20, 150, 1, 2, WeaponImages.LMG99, SoundEffects.Shoot2)},
+            { WeaponName.Cheat, new WeaponData(WeaponName.Cheat, 80, 150, 10, 1, WeaponImages.LMG99, SoundEffects.Shoot2)},
         };
         
 

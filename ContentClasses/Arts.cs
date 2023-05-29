@@ -44,7 +44,7 @@ namespace Abyss.ContentClasses
         public static Texture2D Water;
 
         //Bricks
-        private static int bricksCount = 5;
+        private static int bricksCount = 2;
         private static List<Texture2D> bricksTextures;
         public static Texture2D Bricks { get => bricksTextures[_random.Next(bricksCount)]; }
 

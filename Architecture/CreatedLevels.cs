@@ -10,7 +10,7 @@ namespace Abyss.Architecture
                     player,
                     CreatedMaps.Map1,
                     targetsCount == null ? 6 : (int)targetsCount,
-                    enemiesCount == null ? 10 : (int)enemiesCount,
+                    enemiesCount == null ? 8 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
 
         public static Level GetLevel2(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
@@ -18,7 +18,7 @@ namespace Abyss.Architecture
                     player,
                     CreatedMaps.Map2,
                     targetsCount == null ? 9 : (int)targetsCount,
-                    enemiesCount == null ? 6 : (int)enemiesCount,
+                    enemiesCount == null ? 8 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
 
         public static Level GetLevel3(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
@@ -26,7 +26,7 @@ namespace Abyss.Architecture
                     player,
                     CreatedMaps.Map3,
                     targetsCount == null ? 6 : (int)targetsCount,
-                    enemiesCount == null ? 15 : (int)enemiesCount,
+                    enemiesCount == null ? 10 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
 
         public static Level GetLevel4(Player player, int? enemiesCount = null, int? targetsCount = null, int? targetsCollected = null) =>
@@ -42,7 +42,7 @@ namespace Abyss.Architecture
                     player,
                     CreatedMaps.Map5,
                     targetsCount == null ? 8 : (int)targetsCount,
-                    enemiesCount == null ? 10 : (int)enemiesCount,
+                    enemiesCount == null ? 12 : (int)enemiesCount,
                     targetsCollected == null ? 0 : (int)targetsCollected);
 
     }

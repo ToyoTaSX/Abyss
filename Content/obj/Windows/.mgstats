@@ -1,8 +1,1 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/Map1.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/MapGenerator/Map1.xnb","TextureProcessor","Texture2DContent",1893,14725,0,1143138
-"C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/Map2.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/MapGenerator/Map2.xnb","TextureProcessor","Texture2DContent",1606,14485,0,0021605
-"C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/Map3.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/MapGenerator/Map3.xnb","TextureProcessor","Texture2DContent",1835,14725,0,002685
-"C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/Map4.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/MapGenerator/Map4.xnb","TextureProcessor","Texture2DContent",1810,13685,0,0026873
-"C:/Users/user/Desktop/Projects/Abyss/Content/MapGenerator/Map5.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/MapGenerator/Map5.xnb","TextureProcessor","Texture2DContent",1786,14725,0,0025907
-"C:/Users/user/Desktop/Projects/Abyss/Content/Player.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/Player.xnb","TextureProcessor","Texture2DContent",14803,4181,0,0024168
-"C:/Users/user/Desktop/Projects/Abyss/Content/zombie.png","C:/Users/user/Desktop/Projects/Abyss/Content/bin/Windows/zombie.xnb","TextureProcessor","Texture2DContent",1581,4181,0,0018529
